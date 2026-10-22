@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnCapacityDef>
+    <defName>FE_Fertility</defName>
+    <label>fertility</label>
+    <workerClass>FertilityExpanded.FertilityDisplay</workerClass>
+    <listOrder>199</listOrder>
+    <lethalFlesh>false</lethalFlesh>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnAnomalyEntities>false</showOnAnomalyEntities>
+    <showOnDrones>false</showOnDrones>
+  </PawnCapacityDef>
+
+</Defs>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FE_BreastfeedingRequired>Breastfeeding is required while a lactating caregiver is available.</FE_BreastfeedingRequired>
+  <FE_MilkPlacementFailed>No space to place the expressed milk.</FE_MilkPlacementFailed>
+  <FE_InducedLactationFertility>Induced lactation exemption: x{FACTOR}</FE_InducedLactationFertility>
+
+</LanguageData>

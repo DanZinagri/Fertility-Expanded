@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_CommunalParenting</defName>
+    <label>communal parenting</label>
+    <iconPath>UI/Icons/Precepts/FE_CommunalParenting</iconPath>
+  </IssueDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_CommunalParenting_Collective</defName>
+    <issue>FE_CommunalParenting</issue>
+    <label>collective duty</label>
+    <description>All capable colonists, including parents, can share feeding and play without a family or ideology preference. Feeding assignments still apply. Non-parent caregivers of the child's ideology receive +2 mood for one day after meaningful feeding or play.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0.3</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_CommunalParenting_Supported</defName>
+    <issue>FE_CommunalParenting</issue>
+    <label>supported</label>
+    <description>Parents are entitled to help, but the family remains the center of care. Available parents are preferred for feeding and play; other caregivers help normally when parents are unavailable.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0.45</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_CommunalParenting_FamilyLed</defName>
+    <issue>FE_CommunalParenting</issue>
+    <label>family-led</label>
+    <description>Parents are preferred for automatic feeding and play. Grandparents and adult siblings help when no parent is available. Biological, adoptive, and foster family ties count. Unrelated colonists can feed an urgently hungry baby. Feeding assignments still apply, and direct orders allow other caregivers to help.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>2</displayOrderInIssue>
+    <defaultSelectionWeight>0.2</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+</Defs>

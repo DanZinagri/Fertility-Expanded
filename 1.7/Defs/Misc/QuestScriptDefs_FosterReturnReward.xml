@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>FE_FosterReturnReward</defName>
+    <label>foster return reward</label>
+    <root Class="QuestNode_Sequence" />
+  </QuestScriptDef>
+
+</Defs>

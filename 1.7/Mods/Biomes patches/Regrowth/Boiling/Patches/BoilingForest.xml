@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="RG_BoilingForest"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.015</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.005</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+</Patch>

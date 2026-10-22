@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>FE_AssignFamilyParentLetter</defName>
+    <letterClass>FertilityExpanded.ParentAssignmentLetter</letterClass>
+  </LetterDef>
+
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>FE_FamilyPlacementLetter</defName>
+    <letterClass>FertilityExpanded.PlacementOfferLetter</letterClass>
+  </LetterDef>
+
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>FE_FosterResolutionLetter</defName>
+    <letterClass>FertilityExpanded.FosterResolutionLetter</letterClass>
+  </LetterDef>
+
+</Defs>

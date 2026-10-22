@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="Grasslands"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.04</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.04</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="Scarlands"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.015</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.015</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="LavaField"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.005</FE_Plant_MilkThistle>
+    </value>
+  </Operation>
+</Patch>

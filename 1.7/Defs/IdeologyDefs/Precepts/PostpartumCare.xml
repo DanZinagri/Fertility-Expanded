@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PostpartumCare</defName>
+    <label>postpartum care</label>
+    <iconPath>UI/Icons/Precepts/FE_PostpartumCare</iconPath>
+  </IssueDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PostpartumCare_SacredRest</defName>
+    <issue>FE_PostpartumCare</issue>
+    <label>sacred</label>
+    <description>Rest and care after birth are sacred. Support is easier to recognize and gives +3 mood for five days. Neglect can be recognized after half a day and gives -6 mood for eight days.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0.3</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PostpartumCare_Expected</defName>
+    <issue>FE_PostpartumCare</issue>
+    <label>expected</label>
+    <description>Postpartum care is expected, but it must fit the colony's circumstances. Active support gives +3 mood for five days. Neglect can be recognized after one day and gives -4 mood for five days.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0.45</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PostpartumCare_Practical</defName>
+    <issue>FE_PostpartumCare</issue>
+    <label>practical</label>
+    <description>Basic care after birth is expected, but colony duties take priority. Active support gives +3 mood for five days. Only severe neglect causes a penalty: -4 mood for five days, beginning no sooner than one day after birth.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>2</displayOrderInIssue>
+    <defaultSelectionWeight>0.2</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+</Defs>

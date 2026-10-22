@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_HerbalFertilityBoost</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>herbal fertility boost</label>
+    <description>An herbal treatment is increasing fertility by 25%.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <fertilityFactor>1.25</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_FertilityTreatmentActive</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>industrial fertility boost</label>
+    <description>An industrial treatment is increasing fertility by 50%.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.333333</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <fertilityFactor>1.50</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LanguageData>
+  <FE_ModName>Fertility Expanded</FE_ModName>
+  <FE_SettingsTab>FE Settings</FE_SettingsTab>
+  <FE_CompatibilityTab>Compatibility Settings</FE_CompatibilityTab>
+  <FE_SettingsIntroduction>These settings apply to every save. Existing family records are kept.</FE_SettingsIntroduction>
+  <FE_ResetDefaults>Reset FE defaults</FE_ResetDefaults>
+  <FE_SettingsReproduction>Reproduction</FE_SettingsReproduction>
+  <FE_SettingsFertilityCycle>Enable fertility cycle</FE_SettingsFertilityCycle>
+  <FE_SettingsFertilityCycleTip>Enable FE fertility cycles and use FE's fertility age curve for eligible pawns.</FE_SettingsFertilityCycleTip>
+  <FE_SettingsMenopause>Menopause</FE_SettingsMenopause>
+  <FE_SettingsMenopauseTip>Allow new menopause transitions. Existing postmenopausal pawns remain unchanged.</FE_SettingsMenopauseTip>
+  <FE_SettingsMultibirth>Use FE multiple birth chances</FE_SettingsMultibirth>
+  <FE_SettingsMultibirthTip>Use FE's twin and triplet chances when a pregnancy's baby count is first set. Existing baby counts are kept.</FE_SettingsMultibirthTip>
+  <FE_SettingsGeneCommonality>Multiple birth gene chance</FE_SettingsGeneCommonality>
+  <FE_SettingsGeneCommonalityTip>Chance for a newly generated humanlike pawn to receive the inheritable multiple birth predisposition gene. Male carriers can pass it to their children, but it does not affect their own fertility.</FE_SettingsGeneCommonalityTip>
+  <FE_SettingsPostpartum>Pregnancy and Postpartum</FE_SettingsPostpartum>
+  <FE_SettingsRecovery>Postpartum recovery</FE_SettingsRecovery>
+  <FE_SettingsRecoveryTip>Apply FE's five-day postpartum fertility recovery to future deliveries.</FE_SettingsRecoveryTip>
+  <FE_SettingsExhaustion>Use FE postpartum exhaustion</FE_SettingsExhaustion>
+  <FE_SettingsExhaustionTip>Use FE's exhaustion duration, recovery speed, and movement penalties after future births.</FE_SettingsExhaustionTip>
+  <FE_SettingsSadness>Postpartum depression</FE_SettingsSadness>
+  <FE_SettingsSadnessTip>Allow postpartum depression after future deliveries.</FE_SettingsSadnessTip>
+  <FE_SettingsProcedures>Procedures</FE_SettingsProcedures>
+  <FE_SettingsProcedureOverrides>Use FE sterilization procedures</FE_SettingsProcedureOverrides>
+  <FE_SettingsProcedureOverridesTip>Use FE's vasectomy, vasectomy-reversal, and tubal-ligation changes for procedures performed after this setting is saved.</FE_SettingsProcedureOverridesTip>
+  <FE_SettingsLactation>Lactation</FE_SettingsLactation>
+  <FE_SettingsLactationSystem>Enable lactation system</FE_SettingsLactationSystem>
+  <FE_SettingsLactationSystemTip>Enable FE milk production, automatic self-milking, and lactation induced by implants or the Wet Nurse role. Turning this off does not remove existing lactation or disable infant feeding and other Wet Nurse role effects.</FE_SettingsLactationSystemTip>
+  <FE_SettingsAdvancedLactation>Advanced lactation settings</FE_SettingsAdvancedLactation>
+  <FE_SettingsAdvancedLactationTip>Adjust milk storage, production speed, and milk type for each xenotype using FE milk production. Other milk mods keep their own settings.</FE_SettingsAdvancedLactationTip>
+  <FE_SettingsXenotype>Xenotype</FE_SettingsXenotype>
+  <FE_SettingsXenotypeTip>Select the xenotype whose FE-managed lactation values are being edited.</FE_SettingsXenotypeTip>
+  <FE_SettingsStorageCapacity>Storage capacity</FE_SettingsStorageCapacity>
+  <FE_SettingsStorageCapacityTip>Adjust the shared milk capacity for breastfeeding and expression, compared with vanilla nursing capacity.</FE_SettingsStorageCapacityTip>
+  <FE_SettingsProductionRate>Production rate</FE_SettingsProductionRate>
+  <FE_SettingsProductionRateTip>Adjust how quickly the shared milk supply replenishes, compared with vanilla nursing production.</FE_SettingsProductionRateTip>
+  <FE_SettingsProducedMilk>Produced milk</FE_SettingsProducedMilk>
+  <FE_SettingsProducedMilkTip>Choose the item produced by FE self-milking for this xenotype. This does not change breastfeeding ideology recognition.</FE_SettingsProducedMilkTip>
+  <FE_SettingsFamily>Family Systems</FE_SettingsFamily>
+  <FE_SettingsDisableAdoption>Disable adoption requests</FE_SettingsDisableAdoption>
+  <FE_SettingsDisableAdoptionTip>Stop new FE emergency adoption requests. Existing requests and family records are kept.</FE_SettingsDisableAdoptionTip>
+  <FE_SettingsDisableFoster>Disable foster requests</FE_SettingsDisableFoster>
+  <FE_SettingsDisableFosterTip>Stop new FE foster placement requests. Existing foster stays can still be completed.</FE_SettingsDisableFosterTip>
+  <FE_SettingsThoughts>Thoughts</FE_SettingsThoughts>
+  <FE_SettingsBonding>Parent-baby bonding</FE_SettingsBonding>
+  <FE_SettingsBondingTip>Give the birthing parent a bonding memory for each future baby.</FE_SettingsBondingTip>
+  <FE_SettingsSupported>Supported postpartum care</FE_SettingsSupported>
+  <FE_SettingsSupportedTip>Allow a positive memory when the birthing parent receives enough care in the first three days after birth. Their postpartum care beliefs affect how much care is needed.</FE_SettingsSupportedTip>
+  <FE_SettingsNeglected>Neglected postpartum care</FE_SettingsNeglected>
+  <FE_SettingsNeglectedTip>Allow a negative memory for poor care in the first three days after birth. Their postpartum care beliefs affect when neglect is noticed and how severe the penalty is.</FE_SettingsNeglectedTip>
+  <FE_SettingsSingleParent>Lonely birth</FE_SettingsSingleParent>
+  <FE_SettingsSingleParentTip>Allow a negative memory after birth when neither the birthing parent's partner nor the baby's other biological parent is on the map.</FE_SettingsSingleParentTip>
+  <FE_SettingsCoparent>Co-parent support</FE_SettingsCoparent>
+  <FE_SettingsCoparentTip>Give the birthing parent a positive memory when their partner or the baby's other biological parent is nearby at birth.</FE_SettingsCoparentTip>
+  <FE_SettingsChildHarm>Child-harm parent memories</FE_SettingsChildHarm>
+  <FE_SettingsChildHarmTip>Give biological, adoptive, and foster parents memories when their child is harmed.</FE_SettingsChildHarmTip>
+  <FE_SettingsAdoptiveWelcome>Adoptive-parent welcome memory</FE_SettingsAdoptiveWelcome>
+  <FE_SettingsAdoptiveWelcomeTip>Allow positive adoption memories for assigned parents. Kinship beliefs can change or prevent the memory; Bloodline primacy's penalty is unaffected.</FE_SettingsAdoptiveWelcomeTip>
+  <FE_SettingsFosterWelcome>Foster-parent welcome memory</FE_SettingsFosterWelcome>
+  <FE_SettingsFosterWelcomeTip>Give a foster parent a positive memory when they are assigned to a child.</FE_SettingsFosterWelcomeTip>
+  <FE_SettingsFosterBond>Foster-child bond memory</FE_SettingsFosterBond>
+  <FE_SettingsFosterBondTip>Give a foster child a positive memory when a foster parent is assigned.</FE_SettingsFosterBondTip>
+  <FE_SettingsRjwOwnership>FE reproductive drugs with RJW</FE_SettingsRjwOwnership>
+  <FE_SettingsRjwAuto>Automatic</FE_SettingsRjwAuto>
+  <FE_SettingsRjwAutoTip>Disable FE reproductive drugs when regular RJW uses its own pregnancy system. Keep them enabled with vanilla pregnancy or Lucius RJW. RJW's drugs are unchanged.</FE_SettingsRjwAutoTip>
+  <FE_SettingsRjwPreferFe>Keep FE reproductive drugs enabled</FE_SettingsRjwPreferFe>
+  <FE_SettingsRjwPreferFeTip>Keep FE reproductive drugs available. RJW's drugs remain unchanged.</FE_SettingsRjwPreferFeTip>
+  <FE_SettingsRjwPreferRjw>Disable FE reproductive drugs</FE_SettingsRjwPreferRjw>
+  <FE_SettingsRjwPreferRjwTip>Hide FE reproductive drugs and disable their reproductive effects, including those of existing stock. RJW's drugs remain unchanged.</FE_SettingsRjwPreferRjwTip>
+  <FE_SettingsIntimacyRecovery>Intimacy Postpartum Recovery</FE_SettingsIntimacyRecovery>
+  <FE_SettingsFeRecovery>Fertility Expanded: 5 days, 5% of normal fertility</FE_SettingsFeRecovery>
+  <FE_SettingsIntimacyRecoveryValue>Intimacy: 5–7 days, 1% of normal fertility</FE_SettingsIntimacyRecoveryValue>
+  <FE_SettingsGenderWorksRecovery>GenderWorks Egg-laying Recovery</FE_SettingsGenderWorksRecovery>
+  <FE_SettingsGenderWorksRecoveryValue>GenderWorks: 5–7 days, 1% of normal fertility</FE_SettingsGenderWorksRecoveryValue>
+  <FE_SettingsRecoveryDisabledTip>Enable Postpartum recovery in FE Settings to use this option. While it is disabled, the other mod handles recovery.</FE_SettingsRecoveryDisabledTip>
+  <FE_SettingsBirthRecoveryFuture>Applies to future births only. Existing recovery conditions are unchanged.</FE_SettingsBirthRecoveryFuture>
+  <FE_SettingsEggRecoveryFuture>Applies to future egg laying only. Existing recovery conditions are unchanged.</FE_SettingsEggRecoveryFuture>
+  <FE_SettingsSizedApparel>Sized Apparel Lactation Growth</FE_SettingsSizedApparel>
+  <FE_SettingsLactationGrowth>Lactation breast growth</FE_SettingsLactationGrowth>
+  <FE_SettingsLactationGrowthTip>Gradually increase Sized Apparel's rendered breast size with Lactating severity, capped at one size tier. RJW anatomy is not changed.</FE_SettingsLactationGrowthTip>
+  <FE_SettingsCompatibility>Compatibility</FE_SettingsCompatibility>
+  <FE_SettingsNoCompatibility>No compatibility choices are available for the currently active mods. Automatic integrations do not add settings.</FE_SettingsNoCompatibility>
+  <FE_SettingsCurrent>Current: {STATUS}</FE_SettingsCurrent>
+  <FE_LabelValue>{LABEL}: {VALUE}</FE_LabelValue>
+  <FE_LabelMultiplier>{LABEL}: {VALUE} of normal</FE_LabelMultiplier>
+  <FE_Multiplier>{VALUE}</FE_Multiplier>
+  <FE_DefaultMilk>Default - {MILK}</FE_DefaultMilk>
+  <FE_RestartTooltip>{DESCRIPTION}\n\nChanges take effect after restarting RimWorld.</FE_RestartTooltip>
+  <FE_AutomaticSelfMilking>Automatic self-milking</FE_AutomaticSelfMilking>
+  <FE_MilkMissing>Milk item is missing.</FE_MilkMissing>
+  <FE_SelfMilkDescription>Automatically express surplus milk into usable food items, keeping a reserve for nursing.</FE_SelfMilkDescription>
+  <FE_LactationDisabled>The Fertility Expanded lactation system is disabled in settings.</FE_LactationDisabled>
+  <FE_BiotechRequired>Biotech is required.</FE_BiotechRequired>
+  <FE_ExternalMilkProduction>Milk production is handled by another active milk mod.</FE_ExternalMilkProduction>
+  <FE_InvalidPawn>This pawn is unavailable.</FE_InvalidPawn>
+  <FE_MustBeOnMap>Must be on the map.</FE_MustBeOnMap>
+  <FE_NotLactating>Not lactating.</FE_NotLactating>
+  <FE_NotEnoughMilk>Not enough milk above the nursing reserve.</FE_NotEnoughMilk>
+  <FE_SelfMilkStoredDescription>Automatically express milk as {MILK} when full, or while idle with at least one unit above the nursing reserve. The pawn will use a nearby chair when available.\n\nShared milk: {STORED}/{CAPACITY} nutrition.\nReserved for nursing: {RESERVE} nutrition.</FE_SelfMilkStoredDescription>
+  <FE_MilkFallback>milk</FE_MilkFallback>
+  <FE_MilkProduced>{PAWN_labelShort} produced {COUNT} units of {MILK}.</FE_MilkProduced>
+  <FE_NoXenotypes>No xenotypes available</FE_NoXenotypes>
+  <FE_MilkDefinitionMissing>Missing milk definition</FE_MilkDefinitionMissing>
+  <FE_MilkWithSource>{MILK} ({SOURCE})</FE_MilkWithSource>
+  <FE_MissingSelectedMilk>Missing: {DEFNAME} - using default</FE_MissingSelectedMilk>
+  <FE_TubalLigationLabel>tie fallopian tubes</FE_TubalLigationLabel>
+  <FE_TubalLigationJob>tying TargetA's fallopian tubes.</FE_TubalLigationJob>
+  <FE_TubalLigationSuccess>{0} has successfully tied {1}'s fallopian tubes.</FE_TubalLigationSuccess>
+  <FE_TubalLigationHediff>fallopian tubes tied</FE_TubalLigationHediff>
+  <FE_TubalLigationDescription>A somewhat invasive surgery to render the patient unable to reproduce.</FE_TubalLigationDescription>
+  <FE_VasectomyDescription>A minor surgery to render the patient unable to reproduce.</FE_VasectomyDescription>
+  <FE_VasectomyHediffDescription>The pawn is unable to reproduce. This can be surgically reversed, though reversal becomes less reliable with age.</FE_VasectomyHediffDescription>
+  <FE_ReverseVasectomyDescription>Attempt to reverse the vasectomy and make the patient capable of reproduction. Reversal becomes less reliable with biological age.</FE_ReverseVasectomyDescription>
+  <FE_ReverseVasectomyFailed>{SURGEON_labelShort} could not reverse {PATIENT_labelShort}'s vasectomy. It can be attempted again.</FE_ReverseVasectomyFailed>
+  <FE_CycleFertilityFactor>Fertility: {FACTOR}% of normal during this phase.</FE_CycleFertilityFactor>
+  <FE_BiotechFertilityStat>Biotech fertility stat: {VALUE}</FE_BiotechFertilityStat>
+  <FE_CradleFertilityFactor>Cradle community: {FACTOR} of normal</FE_CradleFertilityFactor>
+  <FE_FertilityEffectsFactor>Fertility Expanded fertility effects: {FACTOR} of normal</FE_FertilityEffectsFactor>
+  <FE_RitualNewborn>newborn: {BABY_labelShort}</FE_RitualNewborn>
+  <FE_RjwInactiveStatus>RJW is not active; Fertility Expanded drugs are available.</FE_RjwInactiveStatus>
+  <FE_RjwDrugsDisabledStatus>Fertility Expanded fertility drugs are hidden and inert for this session.</FE_RjwDrugsDisabledStatus>
+  <FE_RjwDrugsEnabledStatus>Fertility Expanded fertility drugs are available for this session.</FE_RjwDrugsEnabledStatus>
+  <FE_RjwOwnershipPending>{STATUS} Restart RimWorld to apply the current settings.</FE_RjwOwnershipPending>
+  <FE_RjwOwnershipRestart>{STATUS} Changes require a RimWorld restart.</FE_RjwOwnershipRestart>
+  <FE_OrphanNoCandidate>no eligible adult colonist can adopt this child.</FE_OrphanNoCandidate>
+  <FE_OrphanUnstableLocation>child is not on a player home map or stable caravan.</FE_OrphanUnstableLocation>
+  <FE_OrphanBiotechInactive>Biotech is not active.</FE_OrphanBiotechInactive>
+  <FE_OrphanInvalidPawn>selected pawn is missing, destroyed, or dead.</FE_OrphanInvalidPawn>
+  <FE_OrphanNotHumanlike>selected pawn is not a humanlike pawn with relations.</FE_OrphanNotHumanlike>
+  <FE_OrphanNotColonist>selected pawn is not a free colonist.</FE_OrphanNotColonist>
+  <FE_OrphanNotChild>selected pawn is not a baby or child.</FE_OrphanNotChild>
+  <FE_OrphanFosterPlacement>selected pawn is part of a foster placement.</FE_OrphanFosterPlacement>
+  <FE_OrphanHasParent>selected pawn still has a living recognized parent.</FE_OrphanHasParent>
+  <FE_DevStartMenopause>DEV: FE start menopause</FE_DevStartMenopause>
+  <FE_DevCompleteMenopause>DEV: FE complete menopause</FE_DevCompleteMenopause>
+  <FE_DevMenopauseStarted>Fertility Expanded: menopause started for {PAWN_labelShort}.</FE_DevMenopauseStarted>
+  <FE_DevMenopauseCompleted>Fertility Expanded: menopause completed for {PAWN_labelShort}.</FE_DevMenopauseCompleted>
+  <FE_DevForceSingle>DEV: FE force single birth</FE_DevForceSingle>
+  <FE_DevForceTwins>DEV: FE force twins</FE_DevForceTwins>
+  <FE_DevForceTriplets>DEV: FE force triplets</FE_DevForceTriplets>
+  <FE_DevBirthCount>Fertility Expanded: planned baby count for {PAWN_labelShort}: {COUNT}.</FE_DevBirthCount>
+  <FE_DevNotFoster>Fertility Expanded: selected pawn is not part of an active foster placement.</FE_DevNotFoster>
+  <FE_DevFosterReviewSent>Fertility Expanded: foster review letter sent.</FE_DevFosterReviewSent>
+  <FE_DevFosterReviewFailed>Fertility Expanded: foster review could not be sent.</FE_DevFosterReviewFailed>
+  <FE_DevActiveFoster>Fertility Expanded: selected pawn is part of an active foster placement.</FE_DevActiveFoster>
+  <FE_DevOrphanReviewSent>Fertility Expanded: orphan adoption review letter sent.</FE_DevOrphanReviewSent>
+  <FE_DevNoMap>Fertility Expanded: no current map.</FE_DevNoMap>
+  <FE_DevSelectPregnant>Fertility Expanded: select a pregnant or laboring pawn.</FE_DevSelectPregnant>
+  <FE_DevRejectReason>Fertility Expanded: {REASON}</FE_DevRejectReason>
+  <FE_DevFosterRequestSent>Fertility Expanded: foster placement request sent.</FE_DevFosterRequestSent>
+  <FE_DevAdoptionRequestSent>Fertility Expanded: emergency adoption request sent.</FE_DevAdoptionRequestSent>
+  <FE_DevMenuEmergencyAdoption>Force emergency adoption request</FE_DevMenuEmergencyAdoption>
+  <FE_DevMenuFosterPlacement>Force foster placement request</FE_DevMenuFosterPlacement>
+  <FE_DevMenuFosterReview>T: Force foster review for pawn</FE_DevMenuFosterReview>
+  <FE_DevMenuOrphanReview>T: Force orphan adoption review for pawn</FE_DevMenuOrphanReview>
+  <FE_DevMenuSingleBirth>T: Force single birth on pawn</FE_DevMenuSingleBirth>
+  <FE_DevMenuTwins>T: Force twins on pawn</FE_DevMenuTwins>
+  <FE_DevMenuTriplets>T: Force triplets on pawn</FE_DevMenuTriplets>
+</LanguageData>

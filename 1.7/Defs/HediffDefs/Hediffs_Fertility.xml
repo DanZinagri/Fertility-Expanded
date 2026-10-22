@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef>
+    <defName>FE_FertilityCycle</defName>
+    <label>fertility cycle</label>
+    <description>A repeating reproductive cycle. Fertility changes with each phase.</description>
+    <hediffClass>FertilityExpanded.CycleHediff</hediffClass>
+    <initialSeverity>0.1</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="FertilityExpanded.CycleProperties">
+        <cycleTicks>360000</cycleTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>period</label>
+        <fertilityFactor>0.35</fertilityFactor>
+      </li>
+      <li>
+        <label>follicular</label>
+        <minSeverity>0.25</minSeverity>
+        <fertilityFactor>1.0</fertilityFactor>
+      </li>
+      <li>
+        <label>ovulation</label>
+        <minSeverity>0.7</minSeverity>
+        <fertilityFactor>1.75</fertilityFactor>
+      </li>
+      <li>
+        <label>luteal</label>
+        <minSeverity>0.85</minSeverity>
+        <fertilityFactor>1.0</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>FE_PostpartumRecovery</defName>
+    <label>postpartum recovery</label>
+    <description>Recovering after giving birth. Fertility is very low during this recovery window.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300000</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <fertilityFactor>0.05</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>FE_MenopauseTransition</defName>
+    <label>menopause</label>
+    <description>The pawn is transitioning to menopause. Pregnancy is prevented during this transition. When it ends, the pawn becomes permanently infertile.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <preventsPregnancy>true</preventsPregnancy>
+    <comps>
+      <li Class="FertilityExpanded.MenopauseTransitionProperties">
+        <disappearsAfterTicks>360000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <fertilityFactor>0</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>FE_Postmenopausal</defName>
+    <label>postmenopausal</label>
+    <description>The pawn has completed menopause and is now infertile.</description>
+    <initialSeverity>1</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <preventsPregnancy>true</preventsPregnancy>
+    <stages>
+      <li>
+        <becomeVisible>false</becomeVisible>
+        <fertilityFactor>0</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

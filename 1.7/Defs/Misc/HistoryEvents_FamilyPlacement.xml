@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HistoryEventDef>
+    <defName>FE_FamilyPlacementAccepted</defName>
+    <label>accepted family placement</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>FE_FosterChildReturnedHome</defName>
+    <label>returned foster child</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>FE_FosterChildKept</defName>
+    <label>kept foster child</label>
+  </HistoryEventDef>
+
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>FE_LactationImplant</defName>
+    <label>lactation implant</label>
+    <labelNoun>a lactation implant</labelNoun>
+    <description>An implant that starts and maintains lactation while FE lactation is enabled. Implant-supported lactation does not reduce fertility. Another mod may control lactation instead.</description>
+    <descriptionHyperlinks><ThingDef>FE_LactationImplant</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>FE_LactationImplant</spawnThingOnRemoved>
+    <comps>
+      <li Class="FertilityExpanded.LactationImplantProperties"/>
+    </comps>
+  </HediffDef>
+
+</Defs>

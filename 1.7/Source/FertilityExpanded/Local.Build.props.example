@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <RimWorldManagedDir Condition="'$(RimWorldManagedDir)' == ''">PATH_TO_RIMWORLD_1_7_INSTALLATION</RimWorldManagedDir>
+    <HarmonyAssemblyPath Condition="'$(HarmonyAssemblyPath)' == ''">PATH_TO_RIMWORLD_1_7_0HARMONY_DLL</HarmonyAssemblyPath>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_BirthControlActive</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>birth control</label>
+    <description>Pregnancy is prevented due to the use of a birth control pill.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <preventsPregnancy>true</preventsPregnancy>
+    <tags>
+      <li>FE_TemporaryContraception</li>
+    </tags>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.333333</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <fertilityFactor>0</fertilityFactor>
+      </li>
+    </stages>
+    
+  </HediffDef>
+
+  <HediffDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_HerbalContraception</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>herbal contraception</label>
+    <description>Herbal contraception reduces fertility to 20% of its usual level. Pregnancy is still possible.</description>
+    <initialSeverity>1.0</initialSeverity>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.666667</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <fertilityFactor>0.20</fertilityFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

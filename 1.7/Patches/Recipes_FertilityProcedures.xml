@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>/Defs/RecipeDef[defName="ReverseVasectomy"]/workerClass</xpath>
+    <value>
+      <workerClass>FertilityExpanded.ReverseVasectomy</workerClass>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>/Defs/RecipeDef[defName="TerminatePregnancy"]/workerClass</xpath>
+    <value>
+      <workerClass>FertilityExpanded.TerminatePregnancy</workerClass>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>/Defs/RecipeDef[defName="TerminatePregnancy"]/isViolation</xpath>
+    <value>
+      <isViolation>false</isViolation>
+    </value>
+  </Operation>
+
+</Patch>

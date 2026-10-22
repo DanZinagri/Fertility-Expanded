@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_IdeoRole_WetNurse</defName>
+    <label>wet nurse</label>
+    <description>A trusted caregiver who supports infants and new parents. With FE lactation enabled, this role starts and maintains lactation unless another mod controls it or the pawn is severely malnourished. Role-supported lactation does not reduce fertility. Removing the role lets lactation fade naturally, unless childbirth, an implant, or another effect keeps it active.</description>
+    <issue>IdeoRole</issue>
+    <preceptClass>Precept_RoleMulti</preceptClass>
+    <createsRoleEmptyThought>False</createsRoleEmptyThought>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <impact>Medium</impact>
+    <iconPath>UI/Roles/FE_WetNurse</iconPath>
+    <nameMaker>FE_NamerRoleWetNurse</nameMaker>
+    <displayOrderInImpact>5</displayOrderInImpact>
+    <associatedMemes>
+      <li>FE_CradleCommunity</li>
+    </associatedMemes>
+    <roleRequirements>
+      <li Class="RoleRequirement_SameIdeo">
+        <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+      </li>
+      <li Class="RoleRequirement_MinSkillAny">
+        <skills>
+          <Medicine>4</Medicine>
+        </skills>
+      </li>
+    </roleRequirements>
+    <roleRequiredWorkTagAny>
+      <li>Caring</li>
+    </roleRequiredWorkTagAny>
+    <roleTags>
+      <li>FE_WetNurse</li>
+    </roleTags>
+    <roleEffects>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>MedicalTendQuality</statDef>
+        <modifier>1.1</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>SocialImpact</statDef>
+        <modifier>1.05</modifier>
+      </li>
+    </roleEffects>
+  </PreceptDef>
+
+</Defs>

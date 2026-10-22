@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>FE_InstallLactationImplant</defName>
+    <label>install lactation implant</label>
+    <description>Install an implant that starts and maintains lactation while FE lactation is enabled.</description>
+    <descriptionHyperlinks>
+      <ThingDef>FE_LactationImplant</ThingDef>
+      <HediffDef>FE_LactationImplant</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing lactation implant.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FE_LactationImplant</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FE_LactationImplant</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>FE_LactationImplant</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>FE_RemoveLactationImplant</defName>
+    <label>remove lactation implant</label>
+    <description>Remove the implant. Existing lactation can then fade naturally unless another effect keeps it active.</description>
+    <descriptionHyperlinks>
+      <ThingDef>FE_LactationImplant</ThingDef>
+      <HediffDef>FE_LactationImplant</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing lactation implant.</jobString>
+    <removesHediff>FE_LactationImplant</removesHediff>
+  </RecipeDef>
+
+</Defs>

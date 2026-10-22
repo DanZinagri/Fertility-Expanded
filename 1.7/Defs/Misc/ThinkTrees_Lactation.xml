@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>FE_AutomaticSelfMilking</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>50</insertPriority>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive>
+      <subNodes>
+        <li Class="FertilityExpanded.MilkingJobGiver">
+          <requireFullStorage>true</requireFullStorage>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>FE_IdleSelfMilking</defName>
+    <insertTag>Humanlike_PostMain</insertTag>
+    <insertPriority>50</insertPriority>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>Misc</tagToGive>
+      <subNodes>
+        <li Class="FertilityExpanded.MilkingJobGiver" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

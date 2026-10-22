@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>/Defs/StatDef[defName="Fertility"]/parts</xpath>
+    <value>
+      <li Class="FertilityExpanded.CommunityFertility"/>
+    </value>
+  </Operation>
+</Patch>

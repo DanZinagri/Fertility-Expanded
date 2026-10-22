@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RitualObligationTargetFilterDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_NewLifeCelebrationTarget</defName>
+    <workerClass>FertilityExpanded.NewLifeTarget</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualBehaviorDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="DateRitualBehavior">
+    <defName>FE_NewLifeCelebrationRitualBehavior</defName>
+    <workerClass>FertilityExpanded.NewLifeRitual</workerClass>
+    <durationTicks>3000</durationTicks>
+    <roles Inherit="False">
+      <li Class="FertilityExpanded.WelcomeSpeaker">
+        <label>speaker</label><id>speaker</id><required>true</required><maxCount>1</maxCount>
+        <allowChild>false</allowChild><mustBeAbleToReachTarget>true</mustBeAbleToReachTarget><usedSkill>Social</usedSkill>
+      </li>
+      <li Class="FertilityExpanded.WelcomeParent">
+        <label>honored parent</label><id>guardian</id><required>false</required><maxCount>1</maxCount>
+        <allowChild>false</allowChild><allowOtherIdeos>true</allowOtherIdeos><mustBeAbleToReachTarget>true</mustBeAbleToReachTarget>
+      </li>
+    </roles>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages Inherit="False">
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <essential>true</essential>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>0.3</percentage>
+          </li>
+        </endTriggers>
+        <postAction Class="RitualStageAction_Message">
+          <text>{0}: The welcome address is over. The community shares a quiet moment together.</text>
+          <messageTypeDef>NeutralEvent</messageTypeDef>
+        </postAction>
+        <roleBehaviors>
+          <li>
+            <roleId>speaker</roleId><dutyDef>SpeakOnCellFacingSpectators</dutyDef><speakerInteraction>Speech_DateRitual</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_Lectern"><maxDistanceToFocus>5</maxDistanceToFocus></li>
+              <li Class="RitualPosition_BesideThing" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Party</defaultDuty>
+        <endTriggers><li Class="StageEndTrigger_DurationPercentage"><percentage>0.7</percentage></li></endTriggers>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualPatternDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="CelebrationPartyChat">
+    <defName>FE_NewLifeCelebrationRitualPattern</defName>
+    <ritualExpectedDesc>{MEMBERS} can gather to welcome new life into the community.</ritualExpectedDesc>
+    <ritualExpectedDescNoAdjective>{MEMBERS} can gather to welcome new life into the community.</ritualExpectedDescNoAdjective>
+    <ritualObligationTargetFilter>FE_NewLifeCelebrationTarget</ritualObligationTargetFilter>
+    <ritualBehavior>FE_NewLifeCelebrationRitualBehavior</ritualBehavior>
+    <ritualOutcomeEffect>FE_NewLifeWelcomeOutcome</ritualOutcomeEffect>
+    <ritualObligationTriggers Inherit="False" />
+    <canStartAnytime>false</canStartAnytime>
+    <alwaysStartAnytime>false</alwaysStartAnytime>
+    <mergeGizmosForObligations>false</mergeGizmosForObligations>
+    <ritualExplanation>Welcome newborns with a short address by your leader or a Wet Nurse, followed by quiet conversation. The ceremony is available from birth until three days afterward. Keep every surviving newborn in the group in a crib or with a caregiver within 12 cells of the ritual spot. Caregivers holding newborns stay outside the ceremony so care is uninterrupted.</ritualExplanation>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <patternGroupTag>FE_NewLifeCelebration</patternGroupTag>
+    <tags>
+      <li>FE_NewLifeCelebration</li>
+    </tags>
+  </RitualPatternDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_NewLifeCelebrationRitual</defName>
+    <label>new life celebration</label>
+    <description>A calm gathering to welcome newborns. Attendance, room impressiveness, seating, and the presence of a biological, adoptive, or foster parent and a Wet Nurse improve the ceremony.</description>
+    <issue>Ritual</issue>
+    <impact>Low</impact>
+    <iconPath>UI/Icons/Rituals/RitualFestival</iconPath>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>FE_NewLifeCelebrationRitualPattern</ritualPatternBase>
+    <associatedMemes>
+      <li>FE_CradleCommunity</li>
+    </associatedMemes>
+    <allowDuplicates>false</allowDuplicates>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <skipOpportunityLettersBeforeDay>0</skipOpportunityLettersBeforeDay>
+    <notifyPlayerOnOpportunity>true</notifyPlayerOnOpportunity>
+    <allowOptionalRitualObligations>true</allowOptionalRitualObligations>
+    <useRepeatPenalty>false</useRepeatPenalty>
+  </PreceptDef>
+
+  <RitualOutcomeEffectDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_NewLifeWelcomeOutcome</defName>
+    <description>Depending on ceremony quality, participants receive between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>RitualOutcomeEffectWorker_FromQuality</workerClass>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>attendance</label>
+        <curve><points><li>(1, 0)</li><li>(5, 0.2)</li><li>(10, 0.4)</li></points></curve>
+      </li>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label><statDef>Impressiveness</statDef>
+        <curve><points><li>(0, 0)</li><li>(40, 0.05)</li><li>(100, 0.15)</li><li>(170, 0.2)</li></points></curve>
+      </li>
+      <li Class="RitualOutcomeComp_RitualSeatPresent"><qualityOffset>0.15</qualityOffset></li>
+      <li Class="FertilityExpanded.CaregiverPresence">
+        <label>newborn's parent present</label>
+        <curve><points><li>(0, 0)</li><li>(1, 0.15)</li></points></curve>
+      </li>
+      <li Class="FertilityExpanded.CaregiverPresence">
+        <label>Wet Nurse present</label><wetNurse>true</wetNurse>
+        <curve><points><li>(0, 0)</li><li>(1, 0.1)</li></points></curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Awkward</label><chance>0.05</chance><memory>FE_AwkwardNewLifeWelcome</memory><positivityIndex>-2</positivityIndex>
+        <description>The {0} was awkward. The address felt distant, and the gathering never found a shared sense of welcome.</description>
+      </li>
+      <li>
+        <label>Quiet</label><chance>0.15</chance><memory>FE_QuietNewLifeWelcome</memory><positivityIndex>-1</positivityIndex>
+        <description>The {0} was subdued. New life was welcomed, but the words and conversation left little impression.</description>
+      </li>
+      <li>
+        <label>Heartwarming</label><chance>0.6</chance><memory>FE_HeartwarmingNewLifeWelcome</memory><positivityIndex>1</positivityIndex>
+        <description>The {0} was heartwarming. Gentle words and shared hopes brought the community together to welcome new life.</description>
+      </li>
+      <li>
+        <label>Unforgettable</label><chance>0.2</chance><memory>FE_UnforgettableNewLifeWelcome</memory><positivityIndex>2</positivityIndex>
+        <description>The {0} was unforgettable. The community's welcome became a cherished promise to care for this new life.</description>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+</Defs>

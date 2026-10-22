@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/HediffDef[defName="PostpartumExhaustion"]/hediffClass[text()="HediffWithComps"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/HediffDef[defName="PostpartumExhaustion"]/hediffClass</xpath>
+      <value>
+        <hediffClass>FertilityExpanded.PostpartumExhaustion</hediffClass>
+      </value>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.7>
+    <li>Common</li>
+    <li>1.7</li>
+    <li>1.7/Mods/Biomes patches/Core</li>
+    <li IfModActive="Ludeon.RimWorld.Odyssey">1.7/Mods/Biomes patches/Odyssey</li>
+    <li IfModActive="zylle.MoreVanillaBiomes">1.7/Mods/Biomes patches/MVB</li>
+    <li IfModActive="sarg.alphabiomes">1.7/Mods/Biomes patches/Alpha</li>
+    <li IfModActive="DankPyon.Medieval.Overhaul">1.7/Mods/Biomes patches/MO</li>
+    <li IfModActive="ReGrowth.BOTR.Core">1.7/Mods/Biomes patches/Regrowth/Aspen</li>
+    <li IfModActive="ReGrowth.BOTR.BoilingForest">1.7/Mods/Biomes patches/Regrowth/Boiling</li>
+    <li IfModActive="Heis.Edo.Themed.Expansion">1.7/Mods/Biomes patches/EDO Bamboo</li>
+    <li IfModActive="pphhyy.GuldenNew">1.7/Mods/Biomes patches/Gulden Forest</li>
+    <li IfModActive="TW.TangsBiome.RainbowForest">1.7/Mods/Biomes patches/Rainbow Land</li>
+    <li IfModActive="BiomesTeam.Oasis">1.7/Mods/Biomes patches/Chromatic Oasis</li>
+    <li IfModActive="automatic.bionicicons">1.7/Mods/BionicIcons</li>
+    <li IfModActive="lucius.familytree">1.7/Mods/LuciusFamilyTree</li>
+    <li IfModActive="tug.Minotaur">1.7/Mods/RoosMinotaur</li>
+  </v1.7>
+</loadFolders>

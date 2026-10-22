@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>FE_BabyCaredFor</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>2</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>Baby was cared for</label>
+        <description>Someone helped feed and comfort my baby.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FE_WetNursedAgainstBelief</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <nextThought>FE_FeedingDisapprovalCooldown</nextThought>
+    <durationDays>3</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>my baby was wet nursed</label>
+        <description>Someone other than a parent nursed {OTHERPAWN}. This conflicts with my beliefs about caring for my child.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FE_UsedFormulaAgainstBelief</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <nextThought>FE_FeedingDisapprovalCooldown</nextThought>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>my baby wasn't given breast milk</label>
+        <description>My child was fed something other than breast milk when a lactating caregiver was available.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FE_UsedFormulaDespitePreference</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <nextThought>FE_FeedingDisapprovalCooldown</nextThought>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>my baby wasn't given breast milk</label>
+        <description>I would have preferred breast milk for my child, but another food was used instead.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>FE_FeedingDisapprovalCooldown</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <showBubble>false</showBubble>
+    <stages>
+      <li>
+        <visible>false</visible>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

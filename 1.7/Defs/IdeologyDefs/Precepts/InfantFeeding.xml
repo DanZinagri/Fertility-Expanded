@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_InfantFeeding</defName>
+    <label>infant feeding</label>
+    <iconPath>UI/Icons/Precepts/FE_InfantFeeding_BabyBottle</iconPath>
+  </IssueDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_InfantFeeding_BreastfeedingRequired</defName>
+    <issue>FE_InfantFeeding</issue>
+    <label>breastfeeding required</label>
+    <description>Infants should receive breast milk whenever a lactating caregiver is available. Other baby food is acceptable only when necessary.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0.35</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_InfantFeeding_BreastfeedingPreferred</defName>
+    <issue>FE_InfantFeeding</issue>
+    <label>breastfeeding preferred</label>
+    <description>Breastfeeding is the ideal start for a child, though practical feeding remains acceptable when conditions demand it.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0.45</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_InfantFeeding_FlexibleFeeding</defName>
+    <issue>FE_InfantFeeding</issue>
+    <label>flexible feeding</label>
+    <description>The colony values fed, safe babies over rigid feeding customs.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>2</displayOrderInIssue>
+    <defaultSelectionWeight>0.3</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+</Defs>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <MemeDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_CradleCommunity</defName>
+    <label>cradle community</label>
+    <description>Children and mothers are revered.</description>
+    <iconPath>UI/Memes/FE_CradleCommunity</iconPath>
+    <groupDef>Misc</groupDef>
+    <impact>2</impact>
+    <renderOrder>85</renderOrder>
+    <exclusionTags>
+      <li>FE_CradleCommunity</li>
+    </exclusionTags>
+    <requireOne>
+      <li>
+        <li>FE_InfantFeeding_BreastfeedingRequired</li>
+      </li>
+      <li>
+        <li>FE_WetNursing_Approved</li>
+      </li>
+      <li>
+        <li>FE_PostpartumCare_SacredRest</li>
+      </li>
+      <li>
+        <li>FE_Kinship_AdoptiveKinship</li>
+      </li>
+    </requireOne>
+    <requiredRituals>
+      <li>
+        <precept>FE_NewLifeCelebrationRitual</precept>
+        <pattern>FE_NewLifeCelebrationRitualPattern</pattern>
+      </li>
+    </requiredRituals>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective-&gt;nurturing</li>
+        <li>memeAdjective-&gt;kinbound</li>
+        <li>memeConcept-&gt;kinship</li>
+        <li>memeConcept-&gt;cradles</li>
+        <li>memeMoralist-&gt;keeper</li>
+      </rulesStrings>
+    </generalRules>
+  </MemeDef>
+
+</Defs>

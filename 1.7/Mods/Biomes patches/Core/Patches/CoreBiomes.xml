@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="TemperateForest"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.04</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.04</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="AridShrubland"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.04</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.015</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="BorealForest"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_QueenAnnesLace>0.015</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="Desert"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.005</FE_Plant_MilkThistle>
+    </value>
+  </Operation>
+</Patch>

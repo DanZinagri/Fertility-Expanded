@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FE_NewLifeRitualOpportunityText>{BABY_labelShort} has been born. {RITUAL} can be held within {DURATION} to welcome them into the community.</FE_NewLifeRitualOpportunityText>
+  <FE_NewLifeRitualGroupOpportunityText>Welcome {BABIES} into the community with {RITUAL}. The ceremony is available now, until {DURATION} after birth.</FE_NewLifeRitualGroupOpportunityText>
+  <FE_NewLifeNotReady>The ceremony has expired or its newborns are not safely nearby.</FE_NewLifeNotReady>
+
+</LanguageData>

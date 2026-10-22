@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FE_TerminationBeliefConfirmation>This surgery can conflict with the patient's or surgeon's beliefs about pregnancy termination. Believers who forbid it receive a mood penalty after a successful procedure. A forbidden termination on a foreign patient also causes −35 goodwill with their home faction.\n\nProceed with pregnancy termination for {PAWN_labelShort}?</FE_TerminationBeliefConfirmation>
+  <FE_NewLifeBabyTooFar>{BABY_labelShort} must be within 12 cells of this ritual spot.</FE_NewLifeBabyTooFar>
+  <FE_NewLifeBabyNeedsCare>Place {BABY_labelShort} in a nearby crib or have a caregiver hold the newborn before beginning.</FE_NewLifeBabyNeedsCare>
+  <FE_NewLifeSpeakerRequirement>The speaker must be this ideology's leader or an assigned Wet Nurse.</FE_NewLifeSpeakerRequirement>
+  <FE_NewLifeGuardianRequirement>This honored role is for the newborn's biological, adoptive, or foster parent.</FE_NewLifeGuardianRequirement>
+  <FE_NewLifeCarrierParticipating>The caregiver holding the newborn must stay outside the ceremony. Place the newborn in a nearby crib or update the participants before beginning.</FE_NewLifeCarrierParticipating>
+</LanguageData>

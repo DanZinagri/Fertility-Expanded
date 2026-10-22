@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+**/Local.Build.props
+*.pdb
+.vs/
+.idea/
+*.user
+*.suo
+Thumbs.db
+desktop.ini

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_Kinship</defName>
+    <label>kinship</label>
+    <iconPath>UI/Icons/Precepts/FE_Kinship</iconPath>
+  </IssueDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_Kinship_AdoptiveKinship</defName>
+    <issue>FE_Kinship</issue>
+    <label>adoptive kinship</label>
+    <description>Adopted children are full kin. Becoming an adoptive parent gives +6 mood for eight days. Refusing an adoption request gives colonists with this belief -3 mood for four days.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0.2</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_Kinship_AdoptionAccepted</defName>
+    <issue>FE_Kinship</issue>
+    <label>adoption accepted</label>
+    <description>Adoption is a respected way to grow a family. Becoming an adoptive parent gives +3 mood for eight days. Refusing adoption carries no belief penalty.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0.4</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_Kinship_Neutral</defName>
+    <issue>FE_Kinship</issue>
+    <label>neutral</label>
+    <description>Blood ties and adoptive ties are private family matters. This belief adds no adoption or refusal mood effects.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>2</displayOrderInIssue>
+    <defaultSelectionWeight>0.35</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_Kinship_BloodlinePrimacy</defName>
+    <issue>FE_Kinship</issue>
+    <label>bloodline primacy</label>
+    <description>Blood ties are considered the strongest family bond. Adoption remains possible, but becoming an adoptive parent gives -2 mood for five days.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>3</displayOrderInIssue>
+    <defaultSelectionWeight>0.1</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+</Defs>

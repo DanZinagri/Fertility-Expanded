@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="AB_IdyllicMeadows"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.04</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.04</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="AB_GallatrossGraveyard"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.04</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.005</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/BiomeDef[defName="AB_TarPits"]/wildPlants</xpath>
+    <value>
+      <FE_Plant_MilkThistle>0.04</FE_Plant_MilkThistle>
+      <FE_Plant_QueenAnnesLace>0.015</FE_Plant_QueenAnnesLace>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>/Defs/HediffDef[defName="Lactating"]/comps</xpath>
+    <value>
+      <li Class="FertilityExpanded.MilkStorageProperties"/>
+    </value>
+  </Operation>
+
+</Patch>

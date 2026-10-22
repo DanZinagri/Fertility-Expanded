@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PregnancyTermination</defName>
+    <label>pregnancy termination</label>
+    <iconPath>UI/Icons/Precepts/FE_PregnancyTermination</iconPath>
+  </IssueDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PregnancyTermination_Forbidden</defName>
+    <issue>FE_PregnancyTermination</issue>
+    <label>forbidden</label>
+    <description>Ending a pregnancy is considered a serious violation. Patients and surgeons who hold this belief suffer a mood penalty after termination. Performing it on a foreign patient who holds this belief costs 35 goodwill with their home faction. The surgery remains available.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0.2</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PregnancyTermination_Accepted</defName>
+    <issue>FE_PregnancyTermination</issue>
+    <label>accepted</label>
+    <description>Pregnancy termination is an accepted procedure, and the decision belongs to the individual. This belief adds no warning or mood penalty.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0.35</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_PregnancyTermination_NoPreference</defName>
+    <issue>FE_PregnancyTermination</issue>
+    <label>no preference</label>
+    <description>Pregnancy termination is treated as a private medical matter rather than a moral issue.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>2</displayOrderInIssue>
+    <defaultSelectionWeight>0.45</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+</Defs>

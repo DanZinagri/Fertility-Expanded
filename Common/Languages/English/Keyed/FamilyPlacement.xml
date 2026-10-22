@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FE_DistantSettlement>a distant settlement</FE_DistantSettlement>
+
+  <FE_AssignAdoptiveParentTitle>Assign adoptive parent</FE_AssignAdoptiveParentTitle>
+  <FE_AssignAdoptiveParentLabel>Choose an adoptive parent for {CHILD_labelShort}</FE_AssignAdoptiveParentLabel>
+  <FE_AssignAdoptiveParentText>{CHILD_labelShort} has joined the colony. Choose an adult colonist to be recognized as {CHILD_possessive} adoptive parent.</FE_AssignAdoptiveParentText>
+  <FE_OrphanAdoptionTitle>Choose adoptive family</FE_OrphanAdoptionTitle>
+  <FE_OrphanAdoptionLetterLabel>{CHILD_labelShort} needs an adoptive family</FE_OrphanAdoptionLetterLabel>
+  <FE_OrphanAdoptionLetterText>{CHILD_labelShort} has no living recognized parent. Choose an adult colonist to become {CHILD_possessive} adoptive parent.</FE_OrphanAdoptionLetterText>
+  <FE_AssignFosterParentTitle>Assign foster parent</FE_AssignFosterParentTitle>
+  <FE_AssignFosterParentLabel>Choose a foster parent for {CHILD_labelShort}</FE_AssignFosterParentLabel>
+  <FE_AssignFosterParentText>{CHILD_labelShort} is staying with the colony as a foster child. Choose an adult colonist to be recognized as {CHILD_possessive} foster parent.</FE_AssignFosterParentText>
+  <FE_AdoptAsChildOf>Adopt {CHILD_labelShort} into {PARENT_labelShort}'s family</FE_AdoptAsChildOf>
+  <FE_AdoptWithoutAssignedParent>Adopt {CHILD_labelShort} without assigning a family</FE_AdoptWithoutAssignedParent>
+  <FE_AdoptiveParentAssigned>{PARENT_labelShort} is now {CHILD_labelShort}'s adoptive parent.</FE_AdoptiveParentAssigned>
+  <FE_FosterParentAssigned>{PARENT_labelShort} is now {CHILD_labelShort}'s foster parent.</FE_FosterParentAssigned>
+  <FE_FamilyIsEverythingAlreadyPlaced>{CHILD_labelShort} already has an adoptive or foster parent.</FE_FamilyIsEverythingAlreadyPlaced>
+
+  <FE_AdoptionPlacementTitle>Emergency adoption request</FE_AdoptionPlacementTitle>
+  <FE_AdoptionPlacementLetterLabel>Emergency adoption request</FE_AdoptionPlacementLetterLabel>
+  <FE_AdoptionPlacementLetterText>A message arrives from {FACTION}. Their settlement is under attack. They can only save one child. They ask your colony to take the baby immediately and raise them as one of your own.</FE_AdoptionPlacementLetterText>
+  <FE_FosterPlacementTitle>Foster placement request</FE_FosterPlacementTitle>
+  <FE_FosterPlacementLetterLabel>Foster placement request</FE_FosterPlacementLetterLabel>
+  <FE_FosterPlacementLetterText>{FACTION} asks your colony to care for a child until adulthood. When the child turns 18, they will expect you to return the child home.</FE_FosterPlacementLetterText>
+  <FE_AdoptiveChildArrived>A drop pod carrying {CHILD_labelShort} is incoming.</FE_AdoptiveChildArrived>
+  <FE_FosterChildArrived>A drop pod carrying {CHILD_labelShort} is incoming for foster care.</FE_FosterChildArrived>
+  <FE_FamilyPlacementFailed>The placement could not be completed.</FE_FamilyPlacementFailed>
+
+  <FE_FosterResolutionTitle>Foster stay completed</FE_FosterResolutionTitle>
+  <FE_FosterResolutionLetterLabel>{CHILD_labelShort}'s foster stay</FE_FosterResolutionLetterLabel>
+  <FE_FosterResolutionLetterText>{CHILD_labelShort} has reached adulthood. {FACTION} expects the foster stay to end. Return {CHILD_objective} within three days, or the colony will adopt {CHILD_objective}. If {CHILD_labelShort} is away when the deadline passes, adoption will complete on returning to a colony home map.\n\nAdoption breaks the foster agreement. Goodwill with {FACTION}: -60.</FE_FosterResolutionLetterText>
+  <FE_ReturnFosterChild>Return home</FE_ReturnFosterChild>
+  <FE_FosterReturnExpired>The foster review deadline has passed. Adoption is pending.</FE_FosterReturnExpired>
+  <FE_FosterNeedsHome>The pawn must be on a colony home map to resolve the foster stay.</FE_FosterNeedsHome>
+  <FE_FosterSourceMissing>The original settlement is unavailable. Adoption is still possible.</FE_FosterSourceMissing>
+  <FE_AdoptFosterChild>Adopt into colony (-60 goodwill)</FE_AdoptFosterChild>
+  <FE_FosterChildReturned>{CHILD_labelShort} has returned home.</FE_FosterChildReturned>
+  <FE_FosterChildAdopted>{CHILD_labelShort} has been adopted into the colony.</FE_FosterChildAdopted>
+  <FE_FosterReturnRewardQuestName>Return of {CHILD_labelShort}</FE_FosterReturnRewardQuestName>
+  <FE_FosterReturnRewardQuestDescription>{CHILD_labelShort}'s foster stay is complete, and {FACTION} has sent thanks for returning {CHILD_objective} home. Choose one reward shipment.</FE_FosterReturnRewardQuestDescription>
+  <FE_FosterReturnRewardLetterLabel>Foster reward offered</FE_FosterReturnRewardLetterLabel>
+  <FE_FosterReturnRewardLetterText>{FACTION} has offered a reward for the successful return of {CHILD_labelShort}. Choose one reward option in the quest tab.</FE_FosterReturnRewardLetterText>
+  <FE_FosterReturnRewardArrivedLetterLabel>Foster reward arrived</FE_FosterReturnRewardArrivedLetterLabel>
+  <FE_FosterReturnRewardArrivedLetterText>The selected foster reward has arrived by transport pod.</FE_FosterReturnRewardArrivedLetterText>
+  <FE_FosterChildKeptAngerLetterLabel>Foster agreement broken</FE_FosterChildKeptAngerLetterLabel>
+  <FE_FosterChildKeptAngerLetterText>{FACTION} is furious that your colony refused to return {CHILD_labelShort}. They consider this a grave betrayal of the foster agreement.\n\nGoodwill with {FACTION}: -60.</FE_FosterChildKeptAngerLetterText>
+
+</LanguageData>

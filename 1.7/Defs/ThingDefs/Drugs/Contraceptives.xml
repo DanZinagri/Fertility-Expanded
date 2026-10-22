@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MakeableDrugPillBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_BirthControlPill</defName>
+    <label>birth control pill</label>
+    <description>A contraceptive pill for pawns capable of pregnancy. It prevents pregnancy for three days.</description>
+    <possessionCount>6</possessionCount>
+    <descriptionHyperlinks><HediffDef>FE_BirthControlActive</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/FE_BirthControlPill</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.45</drawSize>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>400</WorkToMake>
+      <MarketValue>8</MarketValue>
+      <Mass>0.005</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="FertilityExpanded.ReproductiveIngestion">
+          <hediffDef>FE_BirthControlActive</hediffDef>
+          <gestationalOnly>true</gestationalOnly>
+          <removeCycle>true</removeCycle>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>FertilityProcedures</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <displayPriority>2105</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>1</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+      <FE_QueenAnnesLaceParts>1</FE_QueenAnnesLaceParts>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1005</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableDrugBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_HerbalContraceptiveTea</defName>
+    <label>herbal contraceptive tea</label>
+    <description>An herbal tea brewed from Queen Anne's lace and healroot. It reduces fertility to 20% of its usual level for one and a half days. It does not guarantee pregnancy prevention.</description>
+    <possessionCount>4</possessionCount>
+    <descriptionHyperlinks><HediffDef>FE_HerbalContraception</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/FE_HerbalContraceptiveTea</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.45</drawSize>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>350</WorkToMake>
+      <MarketValue>13</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Flammability>0.9</Flammability>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <foodType>Fluid, Processed</foodType>
+      <baseIngestTicks>210</baseIngestTicks>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Drink</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Drink {0}</ingestCommandString>
+      <ingestReportString>Drinking {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="FertilityExpanded.ReproductiveIngestion">
+          <hediffDef>FE_HerbalContraception</hediffDef>
+          <gestationalOnly>true</gestationalOnly>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <recipeUsers>
+        <li>Campfire</li>
+        <li>ElectricStove</li>
+        <li>FueledStove</li>
+      </recipeUsers>
+      <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+      <workSkill>Cooking</workSkill>
+      <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+      <displayPriority>1411</displayPriority>
+    </recipeMaker>
+    <costList>
+      <MedicineHerbal>2</MedicineHerbal>
+      <FE_QueenAnnesLaceParts>2</FE_QueenAnnesLaceParts>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1011</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

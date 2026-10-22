@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <GeneDef>
+    <defName>FE_MultipleBirthTendency</defName>
+    <label>multiple birth predisposition</label>
+    <description>Female carriers of this gene are more likely to conceive twins or triplets. Male carriers are unaffected, but can pass the gene to their children. The gene does not guarantee multiple births.</description>
+    <geneClass>FertilityExpanded.MultipleBirthGene</geneClass>
+    <displayCategory>Reproduction</displayCategory>
+    <iconPath>UI/Icons/Genes/FE_MultipleBirthTendency</iconPath>
+    <displayOrderInCategory>50</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>-1</biostatMet>
+    <customEffectDescriptions>
+      <li>Three times the odds of twins or triplets relative to a single birth.</li>
+    </customEffectDescriptions>
+  </GeneDef>
+
+</Defs>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnRelationDef>
+    <defName>FE_AdoptiveParent</defName>
+    <label>adoptive father</label>
+    <labelFemale>adoptive mother</labelFemale>
+    <importance>188</importance>
+    <diedThought>MyFatherDied</diedThought>
+    <diedThoughtFemale>MyMotherDied</diedThoughtFemale>
+    <killedThought>KilledMyFather</killedThought>
+    <killedThoughtFemale>KilledMyMother</killedThoughtFemale>
+    <lostThought>MyFatherLost</lostThought>
+    <lostThoughtFemale>MyMotherLost</lostThoughtFemale>
+    <soldThoughts>
+      <li>SoldMyLovedOne</li>
+    </soldThoughts>
+    <opinionOffset>25</opinionOffset>
+    <romanceChanceFactor>0.03</romanceChanceFactor>
+    <implied>false</implied>
+    <familyByBloodRelation>false</familyByBloodRelation>
+  </PawnRelationDef>
+
+  <PawnRelationDef>
+    <workerClass>FertilityExpanded.AdoptiveChildRelation</workerClass>
+    <defName>FE_AdoptiveChild</defName>
+    <label>adoptive son</label>
+    <labelFemale>adoptive daughter</labelFemale>
+    <importance>187</importance>
+    <diedThought>MySonDied</diedThought>
+    <diedThoughtFemale>MyDaughterDied</diedThoughtFemale>
+    <killedThought>KilledMySon</killedThought>
+    <killedThoughtFemale>KilledMyDaughter</killedThoughtFemale>
+    <lostThought>MySonLost</lostThought>
+    <lostThoughtFemale>MyDaughterLost</lostThoughtFemale>
+    <soldThoughts>
+      <li>SoldMyLovedOne</li>
+    </soldThoughts>
+    <opinionOffset>25</opinionOffset>
+    <romanceChanceFactor>0.03</romanceChanceFactor>
+    <implied>true</implied>
+    <familyByBloodRelation>false</familyByBloodRelation>
+  </PawnRelationDef>
+
+  <PawnRelationDef>
+    <defName>FE_FosterParent</defName>
+    <label>foster father</label>
+    <labelFemale>foster mother</labelFemale>
+    <importance>142</importance>
+    <diedThought>MyFatherDied</diedThought>
+    <diedThoughtFemale>MyMotherDied</diedThoughtFemale>
+    <killedThought>KilledMyFather</killedThought>
+    <killedThoughtFemale>KilledMyMother</killedThoughtFemale>
+    <lostThought>MyFatherLost</lostThought>
+    <lostThoughtFemale>MyMotherLost</lostThoughtFemale>
+    <soldThoughts>
+      <li>SoldMyLovedOne</li>
+    </soldThoughts>
+    <opinionOffset>12</opinionOffset>
+    <romanceChanceFactor>0.1</romanceChanceFactor>
+    <implied>false</implied>
+    <familyByBloodRelation>false</familyByBloodRelation>
+  </PawnRelationDef>
+
+  <PawnRelationDef>
+    <workerClass>FertilityExpanded.FosterChildRelation</workerClass>
+    <defName>FE_FosterChild</defName>
+    <label>foster son</label>
+    <labelFemale>foster daughter</labelFemale>
+    <importance>141</importance>
+    <diedThought>MySonDied</diedThought>
+    <diedThoughtFemale>MyDaughterDied</diedThoughtFemale>
+    <killedThought>KilledMySon</killedThought>
+    <killedThoughtFemale>KilledMyDaughter</killedThoughtFemale>
+    <lostThought>MySonLost</lostThought>
+    <lostThoughtFemale>MyDaughterLost</lostThoughtFemale>
+    <soldThoughts>
+      <li>SoldMyLovedOne</li>
+    </soldThoughts>
+    <opinionOffset>12</opinionOffset>
+    <romanceChanceFactor>0.1</romanceChanceFactor>
+    <implied>true</implied>
+    <familyByBloodRelation>false</familyByBloodRelation>
+  </PawnRelationDef>
+
+</Defs>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BackstoryDef>
+    <defName>FE_WetNurse</defName>
+    <title>wet nurse</title>
+    <titleShort>wet nurse</titleShort>
+    <description>[PAWN_nameDef] spent years caring for infants in another household, settlement, or noble estate. [PAWN_pronoun] learned the quiet work of feeding, soothing, cleaning, and watching for the first signs of sickness.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Medicine>2</Medicine>
+      <Social>1</Social>
+      <Cooking>1</Cooking>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+      <li>Tribal</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>FE_Babysitter</defName>
+    <title>babysitter</title>
+    <titleShort>babysitter</titleShort>
+    <description>Before life on the rim, [PAWN_nameDef] watched children for busy families and overworked caretakers. [PAWN_pronoun] learned how to calm arguments, answer endless questions, and keep children safe.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Social>2</Social>
+      <Medicine>1</Medicine>
+      <Intellectual>1</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>FE_Midwife</defName>
+    <title>midwife</title>
+    <titleShort>midwife</titleShort>
+    <description>[PAWN_nameDef] assisted births in previous communities, clinics, and crowded family homes. [PAWN_pronoun] was rarely the most experienced medic present, but [PAWN_pronoun] knew how to stay calm in stressful situations.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Medicine>3</Medicine>
+      <Social>1</Social>
+      <Intellectual>1</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Tribal</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>FE_AdoptiveRefugee</defName>
+    <title>adoptive refugee</title>
+    <titleShort>refugee</titleShort>
+    <description>[PAWN_nameDef] lost [PAWN_possessive] first home to war, disaster, or collapse. Another family took [PAWN_objective] in. It was not the life [PAWN_pronoun] was born to, but it taught [PAWN_objective] that family is not defined by blood.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Social>1</Social>
+      <Medicine>1</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+      <li>Tribal</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>FE_FosterChild</defName>
+    <title>foster child</title>
+    <titleShort>foster child</titleShort>
+    <description>[PAWN_nameDef] moved between temporary homes, learning each household's rules just in time to leave again. [PAWN_pronoun] became good at reading adults, remembering what mattered to people, and adapting before anyone needed to explain.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Social>2</Social>
+      <Intellectual>1</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+</Defs>

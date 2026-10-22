@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnRelationDef[defName="FE_AdoptiveParent" or defName="FE_FosterParent"]</xpath>
+    <value>
+      <li Class="Lucius.FamilyTree.FamilyTreeRelationExtension">
+        <verticalDirection>ChildPointsToParent</verticalDirection>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnRelationDef[defName="FE_AdoptiveChild" or defName="FE_FosterChild"]</xpath>
+    <value>
+      <li Class="Lucius.FamilyTree.FamilyTreeRelationExtension">
+        <verticalDirection>ParentPointsToChild</verticalDirection>
+      </li>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <IssueDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_WetNursing</defName>
+    <label>wet nursing</label>
+    <iconPath>UI/Issues/Charity</iconPath>
+  </IssueDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_WetNursing_Approved</defName>
+    <issue>FE_WetNursing</issue>
+    <label>accepted</label>
+    <description>Another caregiver may nurse our infants when needed.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <defaultSelectionWeight>0.7</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+  <PreceptDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_WetNursing_Disapproved</defName>
+    <issue>FE_WetNursing</issue>
+    <label>disliked</label>
+    <description>Parents should nurse their own infants. Having someone other than the child's parents nurse them is upsetting.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>0.2</defaultSelectionWeight>
+    <associatedMemes><li>FE_CradleCommunity</li></associatedMemes>
+  </PreceptDef>
+
+</Defs>

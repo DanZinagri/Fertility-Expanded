@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="MakeableDrugBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_HerbalFertilityTonic</defName>
+    <label>fertility tonic</label>
+    <description>A tonic brewed from milk thistle and healroot. It increases fertility by 25% for two days.</description>
+    <possessionCount>4</possessionCount>
+    <descriptionHyperlinks><HediffDef>FE_HerbalFertilityBoost</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/FE_HerbalFertilityTonic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.45</drawSize>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>350</WorkToMake>
+      <MarketValue>13</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Flammability>0.9</Flammability>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <foodType>Fluid, Processed</foodType>
+      <baseIngestTicks>210</baseIngestTicks>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Drink</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Drink {0}</ingestCommandString>
+      <ingestReportString>Drinking {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="FertilityExpanded.ReproductiveIngestion">
+          <hediffDef>FE_HerbalFertilityBoost</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <recipeUsers>
+        <li>Campfire</li>
+        <li>ElectricStove</li>
+        <li>FueledStove</li>
+      </recipeUsers>
+      <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+      <workSkill>Cooking</workSkill>
+      <requiredGiverWorkType>Cooking</requiredGiverWorkType>
+      <displayPriority>1410</displayPriority>
+    </recipeMaker>
+    <costList>
+      <MedicineHerbal>2</MedicineHerbal>
+      <FE_MilkThistleLeaves>2</FE_MilkThistleLeaves>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1010</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="MakeableDrugPillBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FE_FertilityTreatment</defName>
+    <label>fertility treatment</label>
+    <description>An industrial fertility treatment. It increases fertility by 50% for three days.</description>
+    <possessionCount>4</possessionCount>
+    <descriptionHyperlinks><HediffDef>FE_FertilityTreatmentActive</HediffDef></descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drug/FE_FertilityTreatment</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.40</drawSize>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>500</WorkToMake>
+      <MarketValue>24</MarketValue>
+      <Mass>0.005</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="FertilityExpanded.ReproductiveIngestion">
+          <hediffDef>FE_FertilityTreatmentActive</hediffDef>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <recipeMaker>
+      <researchPrerequisite>FertilityProcedures</researchPrerequisite>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <displayPriority>2106</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Neutroamine>1</Neutroamine>
+      <MedicineIndustrial>1</MedicineIndustrial>
+      <FE_MilkThistleLeaves>1</FE_MilkThistleLeaves>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1015</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

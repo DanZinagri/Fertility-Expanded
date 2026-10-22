@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BodyPartProstheticMakeableBase">
+    <defName>FE_LactationImplant</defName>
+    <label>lactation implant</label>
+    <description>A compact endocrine regulator that can be implanted to induce and maintain lactation without reducing fertility. Historically used for wet nurses in advanced colonies across the rim.</description>
+    <descriptionHyperlinks><RecipeDef>FE_InstallLactationImplant</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <costList>
+      <Steel>20</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Neutroamine>8</Neutroamine>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Prosthetics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

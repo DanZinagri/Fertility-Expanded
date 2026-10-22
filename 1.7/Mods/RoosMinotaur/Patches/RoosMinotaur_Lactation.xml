@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/GeneDef[defName="RBM_PeriodicLactation"]/description</xpath>
+        <value>
+          <description>Female carriers of this gene lactate from age 18 through Fertility Expanded's lactation system. A supported installed milk mod can take ownership of production.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationRemove">
+        <xpath>/Defs/GeneDef[defName="RBM_PeriodicLactation"]/abilities/li[text()="RBM_Lactation"]</xpath>
+      </li>
+      <li Class="PatchOperationRemove">
+        <xpath>/Defs/GeneDef[defName="RBM_PeriodicLactation"]/descriptionHyperlinks/AbilityDef[text()="RBM_Lactation"]</xpath>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="RBM_MilkingMachine"]/@Abstract</xpath>
+    <match Class="PatchOperationAttributeRemove">
+      <xpath>/Defs/ThingDef[defName="RBM_MilkingMachine"]</xpath>
+      <attribute>Abstract</attribute>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="RBM_MilkingMachine"]/description</xpath>
+        <value>
+          <description>Legacy milking spot retained for save compatibility. Fertility Expanded disables its automatic milking behavior, and it can be deconstructed.</description>
+        </value>
+      </li>
+      <li Class="PatchOperationRemove">
+        <xpath>/Defs/ThingDef[defName="RBM_MilkingMachine"]/designationCategory</xpath>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

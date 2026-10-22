@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <BionicIconsIconDef>
+    <defName>FE_BionicIcons_LactationImplant</defName>
+    <bodyPart>Torso</bodyPart>
+    <texture>FertilityExpanded/BionicIcons/LactationImplant</texture>
+    <nameContains>FE_LactationImplant</nameContains>
+  </BionicIconsIconDef>
+
+</Defs>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Fertility Expanded</name>
+  <packageId>lucius.fertility.expanded</packageId>
+  <author>Lucius</author>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+    <li>
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+      <displayName>Biotech</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>brrainz.harmony</li>
+    <li>ReGrowth.BOTR.Core</li>
+    <li>automatic.bionicicons</li>
+    <li>LovelyDovey.Sex.WithEuterpe</li>
+    <li>LovelyDovey.Sex.WithRosaline</li>
+    <li>divineDerivative.Romance</li>
+    <li>Euterpe.MilkyTitfuck</li>
+    <li>tug.Minotaur</li>
+    <li>rim.job.world</li>
+    <li>lucius.rjw</li>
+    <li>rizryn.familytree</li>
+    <li>lucius.familytree</li>
+    <li>Rycon.FamilyRelationsAdoption</li>
+    <li>dickus.familyties</li>
+    <li>telardo.RomanceOnTheRim</li>
+  </loadAfter>
+  <incompatibleWith>
+    <li>rjw.menstruation</li>
+    <li>rjw.menstruation.racesupport</li>
+  </incompatibleWith>
+  <description>Expands Biotech pregnancy and parenthood with fertility cycles, twins and triplets, postpartum care, lactation and breast milk, adoption, and foster care. With Ideology, adds family beliefs, a Wet Nurse role, and a ceremony to welcome newborns.</description>
+</ModMetaData>

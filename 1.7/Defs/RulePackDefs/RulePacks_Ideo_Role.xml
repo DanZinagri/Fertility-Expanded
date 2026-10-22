@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <RulePackDef MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>FE_NamerRoleWetNurse</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_roleName(p=5)->wet nurse</li>
+        <li>r_roleName->cradle keeper</li>
+        <li>r_roleName->milk giver</li>
+        <li>r_roleName->[memeAdjective] nurse</li>
+        <li>r_roleName->[memeAdjective] milk giver</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

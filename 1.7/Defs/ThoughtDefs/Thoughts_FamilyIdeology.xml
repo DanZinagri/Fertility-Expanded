@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>FE_AdoptiveKinshipWelcomed</defName><thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays><stackLimit>3</stackLimit><stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages><li><label>embraced adoptive kinship</label><description>I chose a new family bond. Our adopted child is full kin.</description><baseMoodEffect>6</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>FE_SacredPostpartumNeglect</defName><thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays><stackLimit>1</stackLimit>
+    <stages><li><label>neglected sacred recovery</label><description>After giving birth, I needed care. My community failed its sacred duty to support me.</description><baseMoodEffect>-6</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>FE_SharedChildcare</defName><thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>1</durationDays><stackLimit>1</stackLimit><stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages><li><label>shared in childcare</label><description>I helped care for another family's child. We all share this responsibility.</description><baseMoodEffect>2</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>FE_TerminatedPregnancyAgainstBelief</defName><thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>8</durationDays><stackLimit>1</stackLimit>
+    <stages><li><label>pregnancy ended against belief</label><description>My pregnancy was ended. This conflicts deeply with my beliefs.</description><baseMoodEffect>-6</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>FE_PerformedTerminationAgainstBelief</defName><thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays><stackLimit>1</stackLimit>
+    <stages><li><label>performed forbidden termination</label><description>I ended a pregnancy despite my belief that doing so is wrong.</description><baseMoodEffect>-4</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology" Name="FE_NewLifeWelcomeMemoryBase" Abstract="True">
+    <thoughtClass>Thought_AttendedRitual</thoughtClass><durationDays>5</durationDays><stackLimit>1</stackLimit>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="FE_NewLifeWelcomeMemoryBase">
+    <defName>FE_AwkwardNewLifeWelcome</defName>
+    <stages><li><label>awkward newborn welcome</label><description>Our welcome ceremony never found the warmth this new life deserved.</description><baseMoodEffect>-3</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="FE_NewLifeWelcomeMemoryBase">
+    <defName>FE_QuietNewLifeWelcome</defName>
+    <stages><li><label>subdued newborn welcome</label><description>We welcomed a newborn, but the ceremony left little impression.</description><baseMoodEffect>-1</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="FE_NewLifeWelcomeMemoryBase">
+    <defName>FE_HeartwarmingNewLifeWelcome</defName>
+    <stages><li><label>heartwarming newborn welcome</label><description>We welcomed a new life with warmth and shared hopes.</description><baseMoodEffect>5</baseMoodEffect></li></stages>
+  </ThoughtDef>
+  <ThoughtDef MayRequire="Ludeon.RimWorld.Ideology" ParentName="FE_NewLifeWelcomeMemoryBase">
+    <defName>FE_UnforgettableNewLifeWelcome</defName>
+    <stages><li><label>unforgettable newborn welcome</label><description>Our welcome to this newborn became a promise I will cherish.</description><baseMoodEffect>8</baseMoodEffect></li></stages>
+  </ThoughtDef>
+</Defs>
