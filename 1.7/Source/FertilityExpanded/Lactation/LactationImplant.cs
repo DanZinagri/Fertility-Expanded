@@ -28,7 +28,8 @@ public class LactationImplant : HediffComp
             || !ModsConfig.BiotechActive
             || ModDetection.LactationImplantMaintenanceBlocked
             || Pawn?.health?.hediffSet == null
-            || Pawn.Dead)
+            || Pawn.Dead
+            || Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Malnutrition)?.CurStageIndex >= 2)
         {
             return;
         }
