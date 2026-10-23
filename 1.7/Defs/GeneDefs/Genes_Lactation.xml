@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Removed by Mods/LactationExpansion/Patches/Genes_Lactation.xml when Lactation Expansion is active. -->
+  <GeneDef>
+    <defName>FE_AlwaysLactating</defName>
+    <label>wet nurse</label>
+    <labelShortAdj>lactating</labelShortAdj>
+    <description>Carriers of this gene lactate continuously once they reach adulthood.</description>
+    <geneClass>FertilityExpanded.WetNurseGene</geneClass>
+    <displayCategory>Reproduction</displayCategory>
+    <iconPath>UI/Icons/Genes/Gene_Fertile</iconPath>
+    <displayOrderInCategory>60</displayOrderInCategory>
+    <minAgeActive>16</minAgeActive>
+    <biostatMet>-1</biostatMet>
+    <customEffectDescriptions>
+      <li>Always lactating. If lactation stops because of severe malnutrition, it resumes once the carrier is fed.</li>
+      <li>Gene-supported lactation does not reduce fertility.</li>
+      <li>Male carriers only lactate if male lactation from this gene is allowed in the mod settings.</li>
+      <li>Requires Fertility Expanded's lactation system to be enabled.</li>
+    </customEffectDescriptions>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>wet nurse</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>nurse</symbol></li>
+        <li><symbol>maternal</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+</Defs>

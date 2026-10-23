@@ -62,6 +62,11 @@ internal static class PatchRegistration
             PatchRoosMinotaur(harmony);
         }
 
+        if (ModDetection.LactationExpansionActive)
+        {
+            PatchLactationExpansion(harmony);
+        }
+
         if (ModDetection.RomanceOnTheRimActive)
         {
             PatchRomanceOnTheRim(harmony);
@@ -521,6 +526,27 @@ internal static class PatchRegistration
             nameof(SizedApparelCompat.LactationRemovedPostfix),
             new[] { typeof(Hediff).MakeByRefType() },
             "Sized Apparel lactation removal refresh");
+    }
+
+    private static void PatchLactationExpansion(Harmony harmony)
+    {
+        TryPatchPostfix(
+            harmony,
+            "EuterpeMilkyTitfuck.LactationUtilities",
+            "GenerateMilk",
+            typeof(LactationExpansionCompat),
+            nameof(LactationExpansionCompat.GenerateMilkPostfix),
+            new[] { typeof(Pawn) },
+            "Lactation Expansion produced milk");
+
+        TryPatchPostfix(
+            harmony,
+            "EuterpeMilkyTitfuck.HediffComp_Lactation",
+            "RecacheStats",
+            typeof(LactationExpansionCompat),
+            nameof(LactationExpansionCompat.RecacheStatsPostfix),
+            Type.EmptyTypes,
+            "Lactation Expansion breast size scaling");
     }
 
     private static void PatchRoosMinotaur(Harmony harmony)

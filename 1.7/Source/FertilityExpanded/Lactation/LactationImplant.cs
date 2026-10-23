@@ -29,7 +29,8 @@ public class LactationImplant : HediffComp
             || ModDetection.LactationImplantMaintenanceBlocked
             || Pawn?.health?.hediffSet == null
             || Pawn.Dead
-            || Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Malnutrition)?.CurStageIndex >= 2)
+            || Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Malnutrition)?.CurStageIndex >= 2
+            || (!Features.MaleLactationFromImplant && Pawn.gender == Gender.Male))
         {
             return;
         }

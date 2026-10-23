@@ -40,14 +40,14 @@ internal static class WetNurseLactation
         }
     }
 
-    internal static void MaintainLactation(Pawn pawn)
+    internal static void MaintainLactation(Pawn pawn, bool allowMale)
     {
-        if (!ModsConfig.IdeologyActive
-            || !ModsConfig.BiotechActive
+        if (!ModsConfig.BiotechActive
             || !Features.LactationSystem
             || ModDetection.LactationImplantMaintenanceBlocked
             || pawn?.health == null
             || pawn.Dead
+            || (!allowMale && pawn.gender == Gender.Male)
             || pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Malnutrition)?.CurStageIndex >= 2)
         {
             return;

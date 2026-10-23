@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Lactation Expansion ships its own wet nurse gene (SEX_AlwaysLactating). -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/GeneDef[defName="FE_AlwaysLactating"]</xpath>
+  </Operation>
+
+</Patch>

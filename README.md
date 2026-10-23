@@ -12,6 +12,8 @@ Every single feature is toggleable
 - Postpartum recovery, exhaustion, and a chance of postpartum depression.
 - Parent-baby bonding, co-parent support, and reactions when a child is harmed.
 - Breast milk can be expressed by pawns. with configurable production and capacity by xenotype.
+- A wet nurse gene that keeps carriers lactating (replaced by Lactation Expansion's own gene when it is active).
+- Genes can set the milk item, storage capacity, and production rate through `FertilityExpanded.LactationGeneExtension`.
 - A lactation implant that maintains milk production without lactation's usual fertility reduction.
 - Emergency adoption and foster-placement quests and adoptive and foster family relationships.
 - Birth control, herbal contraceptives, fertility treatments, and growable milk thistle and Queen Anne's lace.

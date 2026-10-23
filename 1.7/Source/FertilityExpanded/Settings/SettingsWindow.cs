@@ -54,7 +54,7 @@ public partial class FertilityExpandedMod : Mod
     {
         FertilityExpandedSettings settings = Settings;
         bool showAdvancedLactationControls = settings.advancedLactationSettings;
-        int lactationRows = showAdvancedLactationControls ? 8 : 2;
+        int lactationRows = showAdvancedLactationControls ? 11 : 5;
         int[] groupRows = { 5, 3, 1, lactationRows, 2, 9 };
         float viewHeight = 48f;
         for (int i = 0; i < groupRows.Length; i++)
@@ -146,6 +146,27 @@ public partial class FertilityExpandedMod : Mod
                 "FE_SettingsAdvancedLactationTip".Translate(),
                 settings.lactationSystem && ModsConfig.BiotechActive,
                 24f);
+            FeatureCheckbox(
+                listing,
+                "FE_SettingsMaleLactationGene".Translate(),
+                ref settings.maleLactationFromGene,
+                "FE_SettingsMaleLactationGeneTip".Translate(),
+                settings.lactationSystem && ModsConfig.BiotechActive && !ModDetection.LactationExpansionActive,
+                24f);
+            FeatureCheckbox(
+                listing,
+                "FE_SettingsMaleLactationRole".Translate(),
+                ref settings.maleLactationFromRole,
+                "FE_SettingsMaleLactationRoleTip".Translate(),
+                settings.lactationSystem && ModsConfig.BiotechActive && ModsConfig.IdeologyActive,
+                24f);
+            FeatureCheckbox(
+                listing,
+                "FE_SettingsMaleLactationImplant".Translate(),
+                ref settings.maleLactationFromImplant,
+                "FE_SettingsMaleLactationImplantTip".Translate(),
+                settings.lactationSystem && ModsConfig.BiotechActive,
+                24f);
 
             if (showAdvancedLactationControls)
             {
@@ -182,8 +203,8 @@ public partial class FertilityExpandedMod : Mod
                     FeatureDropdown(
                         listing,
                         "FE_SettingsProducedMilk".Translate(),
-                        XenotypeProfiles.SelectedMilkLabel(xenotypeSettings),
-                        () => OpenProducedMilkMenu(xenotypeSettings),
+                        XenotypeProfiles.SelectedMilkLabel(xenotypeSettings, xenotype),
+                        () => OpenProducedMilkMenu(xenotypeSettings, xenotype),
                         "FE_SettingsProducedMilkTip".Translate(),
                         controlsEnabled,
                         24f);
@@ -263,7 +284,10 @@ public partial class FertilityExpandedMod : Mod
         bool intimacyActive = ModDetection.IntimacyActive;
         bool genderWorksActive = ModDetection.GenderWorksActive;
         bool sizedApparelActive = ModDetection.SizedApparelActive;
-        bool anyCompatibilityActive = rjwActive || intimacyActive || genderWorksActive || sizedApparelActive;
+        bool breastScalingActive = rjwActive && ModsConfig.BiotechActive;
+        int breastScalingRows = Settings.rjwBreastLactationScaling ? BreastLactationScaling.TierCount * 2 + 4 : 1;
+        bool anyCompatibilityActive = rjwActive || intimacyActive || genderWorksActive || sizedApparelActive
+            || breastScalingActive;
 
         float viewHeight = 0f;
         if (rjwActive)
@@ -284,6 +308,11 @@ public partial class FertilityExpandedMod : Mod
         if (sizedApparelActive)
         {
             viewHeight += FeatureGroupHeight(1) + FeatureGroupGap;
+        }
+
+        if (breastScalingActive)
+        {
+            viewHeight += FeatureGroupHeight(breastScalingRows) + FeatureGroupGap;
         }
 
         if (!anyCompatibilityActive)
@@ -369,6 +398,44 @@ public partial class FertilityExpandedMod : Mod
                 if (previousValue != Settings.sizedApparelLactationGrowth)
                 {
                     SizedApparelCompat.RefreshAllPawns();
+                }
+            });
+        }
+
+        if (breastScalingActive)
+        {
+            DrawFeatureGroup(viewWidth, ref y, "FE_SettingsBreastScaling".Translate(), breastScalingRows, listing =>
+            {
+                FeatureCheckbox(
+                    listing,
+                    "FE_SettingsBreastScalingEnabled".Translate(),
+                    ref Settings.rjwBreastLactationScaling,
+                    "FE_SettingsBreastScalingEnabledTip".Translate());
+                if (!Settings.rjwBreastLactationScaling)
+                {
+                    return;
+                }
+
+                SettingsText(listing, "FE_SettingsBreastScalingInfo".Translate(), 2);
+                List<float> factors = Settings.rjwBreastLactationFactors;
+                for (int i = 0; i < factors.Count; i++)
+                {
+                    float factor = factors[i];
+                    FeatureSlider(
+                        listing,
+                        BreastLactationScaling.TierLabels[i],
+                        ref factor,
+                        BreastLactationScaling.MinimumFactor,
+                        BreastLactationScaling.MaximumFactor,
+                        BreastLactationScaling.FactorStep,
+                        "FE_SettingsBreastScalingTierTip".Translate(BreastLactationScaling.TierLabels[i].Named("TIER")));
+                    factors[i] = factor;
+                }
+
+                Rect resetRow = listing.GetRect(FeatureRowHeight - 4f);
+                if (Widgets.ButtonText(resetRow.LeftPart(0.4f), "FE_SettingsBreastScalingReset".Translate()))
+                {
+                    Settings.rjwBreastLactationFactors = BreastLactationScaling.DefaultFactorList();
                 }
             });
         }
@@ -598,15 +665,15 @@ public partial class FertilityExpandedMod : Mod
         }
     }
 
-    private static void OpenProducedMilkMenu(XenotypeSettings setting)
+    private static void OpenProducedMilkMenu(XenotypeSettings setting, XenotypeDef xenotype)
     {
         IReadOnlyList<ThingDef> milkTypes = XenotypeProfiles.MilkTypes;
         List<FloatMenuOption> options = new List<FloatMenuOption>(milkTypes.Count);
-        ThingDef dominantMilk = XenotypeProfiles.DominantMilkDef;
+        ThingDef dominantMilk = XenotypeProfiles.DefaultMilkFor(xenotype);
         if (dominantMilk != null)
         {
             options.Add(new FloatMenuOption(
-                "FE_DefaultMilk".Translate(XenotypeProfiles.MilkLabel(dominantMilk).Named("MILK")),
+                XenotypeProfiles.DefaultMilkLabel(xenotype),
                 () => setting.producedMilkDefName = null,
                 dominantMilk));
         }

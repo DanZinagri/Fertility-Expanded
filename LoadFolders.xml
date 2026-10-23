@@ -17,5 +17,8 @@
     <li IfModActive="automatic.bionicicons">1.7/Mods/BionicIcons</li>
     <li IfModActive="lucius.familytree">1.7/Mods/LuciusFamilyTree</li>
     <li IfModActive="tug.Minotaur">1.7/Mods/RoosMinotaur</li>
+    <li IfModActive="tug.Minotaur" IfModNotActive="Euterpe.MilkyTitfuck">1.7/Mods/RoosMinotaurWithoutLE</li>
+    <li IfModActive="Euterpe.MilkyTitfuck">1.7/Mods/LactationExpansion</li>
+    <li IfModActiveAll="sarg.alphagenes,DankPyon.Medieval.Overhaul.House.Roxmont">1.7/Mods/AlphaGenesRoxmont</li>
   </v1.7>
 </loadFolders>

@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using FertilityExpanded.Patches.Compatibility;
+
 namespace FertilityExpanded;
 
 internal static class Features
@@ -17,6 +20,19 @@ internal static class Features
     public static bool LactationSystem => Settings?.lactationSystem ?? true;
     public static bool AdvancedLactationSettings => LactationSystem
         && (Settings?.advancedLactationSettings ?? false);
+    public static bool MaleLactationFromGene => Settings?.maleLactationFromGene ?? false;
+    public static bool MaleLactationFromRole => Settings?.maleLactationFromRole ?? true;
+    public static bool MaleLactationFromImplant => Settings?.maleLactationFromImplant ?? true;
+
+    public static bool RjwBreastLactationScaling => Settings?.rjwBreastLactationScaling ?? false;
+
+    public static float BreastLactationFactor(int tier)
+    {
+        List<float> factors = Settings?.rjwBreastLactationFactors;
+        return factors != null && tier >= 0 && tier < factors.Count
+            ? factors[tier]
+            : BreastLactationScaling.DefaultFactorList()[tier];
+    }
 
     public static bool AdoptionQuestsEnabled => !(Settings?.disableAdoptionQuests ?? false);
     public static bool FosterQuestsEnabled => !(Settings?.disableFosterQuests ?? false);

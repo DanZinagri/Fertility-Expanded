@@ -36,6 +36,8 @@ public static class InducedFertilityPatch
             }
         }
 
+        induced = induced || WetNurseGene.IsActiveCarrier(pawn);
+
         if (!induced || lactationFactor <= 0f || lactationFactor >= 1f)
         {
             return;

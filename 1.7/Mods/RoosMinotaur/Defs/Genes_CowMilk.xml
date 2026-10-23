@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Example of FertilityExpanded.LactationGeneExtension. Loaded with Roo's Minotaur. -->
+  <GeneDef>
+    <defName>FE_CowMilk</defName>
+    <label>bovine milk</label>
+    <description>Carriers of this gene produce cow's milk instead of human breast milk when they lactate.</description>
+    <displayCategory>Reproduction</displayCategory>
+    <iconPath>Things/Item/Resource/Milk/FE_Milk</iconPath>
+    <displayOrderInCategory>61</displayOrderInCategory>
+    <exclusionTags>
+      <li>FE_MilkType</li>
+    </exclusionTags>
+    <customEffectDescriptions>
+      <li>Produced milk is ordinary milk.</li>
+    </customEffectDescriptions>
+    <modExtensions>
+      <li Class="FertilityExpanded.LactationGeneExtension">
+        <milkDef>Milk</milkDef>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>

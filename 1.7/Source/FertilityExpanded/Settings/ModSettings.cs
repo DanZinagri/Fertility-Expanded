@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FertilityExpanded.Patches.Compatibility;
 using UnityEngine;
 using Verse;
 
@@ -23,6 +24,9 @@ public class FertilityExpandedSettings : ModSettings
     public bool procedureOverrides = true;
     public bool lactationSystem = true;
     public bool advancedLactationSettings;
+    public bool maleLactationFromGene;
+    public bool maleLactationFromRole = true;
+    public bool maleLactationFromImplant = true;
 
     private List<XenotypeSettings> xenotypeLactationSettings = new List<XenotypeSettings>();
     private Dictionary<string, XenotypeSettings> xenotypeLactationSettingsByDefName;
@@ -44,6 +48,8 @@ public class FertilityExpandedSettings : ModSettings
     public IntimacyPostpartumMode intimacyPostpartumMode = IntimacyPostpartumMode.FertilityExpanded;
     public EggPostpartumMode genderWorksEggPostpartumMode = EggPostpartumMode.FertilityExpanded;
     public bool sizedApparelLactationGrowth = true;
+    public bool rjwBreastLactationScaling;
+    public List<float> rjwBreastLactationFactors = BreastLactationScaling.DefaultFactorList();
 
     public override void ExposeData()
     {
@@ -68,6 +74,9 @@ public class FertilityExpandedSettings : ModSettings
         Scribe_Values.Look(ref procedureOverrides, "procedureOverrides", true);
         Scribe_Values.Look(ref lactationSystem, "lactationSystem", true);
         Scribe_Values.Look(ref advancedLactationSettings, "advancedLactationSettings");
+        Scribe_Values.Look(ref maleLactationFromGene, "maleLactationFromGene");
+        Scribe_Values.Look(ref maleLactationFromRole, "maleLactationFromRole", true);
+        Scribe_Values.Look(ref maleLactationFromImplant, "maleLactationFromImplant", true);
         Scribe_Collections.Look(ref xenotypeLactationSettings, "xenotypeLactationSettings", LookMode.Deep);
 
         Scribe_Values.Look(ref disableAdoptionQuests, "disableAdoptionQuests");
@@ -87,6 +96,8 @@ public class FertilityExpandedSettings : ModSettings
         Scribe_Values.Look(ref intimacyPostpartumMode, "intimacyPostpartumMode", IntimacyPostpartumMode.FertilityExpanded);
         Scribe_Values.Look(ref genderWorksEggPostpartumMode, "genderWorksEggPostpartumMode", EggPostpartumMode.FertilityExpanded);
         Scribe_Values.Look(ref sizedApparelLactationGrowth, "sizedApparelLactationGrowth", true);
+        Scribe_Values.Look(ref rjwBreastLactationScaling, "rjwBreastLactationScaling");
+        Scribe_Collections.Look(ref rjwBreastLactationFactors, "rjwBreastLactationFactors", LookMode.Value);
 
         if (Scribe.mode != LoadSaveMode.LoadingVars)
         {
@@ -118,6 +129,9 @@ public class FertilityExpandedSettings : ModSettings
         procedureOverrides = true;
         lactationSystem = true;
         advancedLactationSettings = false;
+        maleLactationFromGene = false;
+        maleLactationFromRole = true;
+        maleLactationFromImplant = true;
         xenotypeLactationSettings = new List<XenotypeSettings>();
         xenotypeLactationSettingsByDefName = null;
 
@@ -177,6 +191,20 @@ public class FertilityExpandedSettings : ModSettings
 
     private void ValidateCompatibilitySettings()
     {
+        if (rjwBreastLactationFactors == null
+            || rjwBreastLactationFactors.Count != BreastLactationScaling.TierCount)
+        {
+            rjwBreastLactationFactors = BreastLactationScaling.DefaultFactorList();
+        }
+
+        for (int i = 0; i < rjwBreastLactationFactors.Count; i++)
+        {
+            float factor = rjwBreastLactationFactors[i];
+            rjwBreastLactationFactors[i] = float.IsNaN(factor) || float.IsInfinity(factor)
+                ? BreastLactationScaling.DefaultFactorList()[i]
+                : Mathf.Clamp(factor, BreastLactationScaling.MinimumFactor, BreastLactationScaling.MaximumFactor);
+        }
+
         if (rjwDrugCompatibilityMode != RjwDrugMode.Auto
             && rjwDrugCompatibilityMode != RjwDrugMode.FertilityExpanded
             && rjwDrugCompatibilityMode != RjwDrugMode.RimJobWorld)

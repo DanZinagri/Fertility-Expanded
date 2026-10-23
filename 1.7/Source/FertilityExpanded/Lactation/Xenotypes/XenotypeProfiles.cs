@@ -17,6 +17,7 @@ internal static class XenotypeProfiles
     private static readonly Dictionary<string, XenotypeDef> xenotypesByDefName = new Dictionary<string, XenotypeDef>();
     private static readonly List<ThingDef> milkTypes = new List<ThingDef>();
     private static readonly HashSet<string> milkTypeDefNames = new HashSet<string>();
+    private static readonly Dictionary<XenotypeDef, GeneDef> milkGenesByXenotype = new Dictionary<XenotypeDef, GeneDef>();
 
     private static bool initialized;
 
@@ -77,12 +78,22 @@ internal static class XenotypeProfiles
     {
         Initialize();
         XenotypeSettings setting = SettingFor(pawn);
-        ThingDef producedMilk = ResolveProducedMilkDef(setting);
+        LactationGenes.Collect(
+            pawn,
+            out ThingDef geneMilk,
+            out float geneCapacityFactor,
+            out float geneProductionFactor);
+        XenotypeDef xenotype = pawn?.genes != null && !pawn.genes.UniqueXenotype
+            ? pawn.genes.Xenotype
+            : null;
+        ThingDef producedMilk = geneMilk ?? ResolveProducedMilkDef(setting, xenotype);
+
+        float breastFactor = BreastLactationScaling.FactorFor(pawn);
 
         return new LactationProfile(
             producedMilk,
-            setting?.storageCapacityMultiplier ?? 1f,
-            setting?.productionRateMultiplier ?? 1f);
+            (setting?.storageCapacityMultiplier ?? 1f) * geneCapacityFactor * breastFactor,
+            (setting?.productionRateMultiplier ?? 1f) * geneProductionFactor * breastFactor);
     }
 
     public static ThingDef ProducedMilkDef(Pawn pawn)
@@ -90,12 +101,12 @@ internal static class XenotypeProfiles
         return ProfileFor(pawn).ProducedMilkDef;
     }
 
-    public static ThingDef SelectedMilkDef(XenotypeSettings setting)
+    public static ThingDef SelectedMilkDef(XenotypeSettings setting, XenotypeDef xenotype)
     {
         Initialize();
         if (setting == null || setting.producedMilkDefName.NullOrEmpty())
         {
-            return DominantMilkDef;
+            return DefaultMilkFor(xenotype);
         }
 
         if (!milkTypeDefNames.Contains(setting.producedMilkDefName))
@@ -124,17 +135,63 @@ internal static class XenotypeProfiles
             : "FE_MilkWithSource".Translate(milkDef.LabelCap.Named("MILK"), sourceName.Named("SOURCE"));
     }
 
-    public static string SelectedMilkLabel(XenotypeSettings setting)
+    public static string SelectedMilkLabel(XenotypeSettings setting, XenotypeDef xenotype)
     {
         if (setting == null || setting.producedMilkDefName.NullOrEmpty())
         {
-            return "FE_DefaultMilk".Translate(MilkLabel(DominantMilkDef).Named("MILK"));
+            return DefaultMilkLabel(xenotype);
         }
 
-        ThingDef milkDef = SelectedMilkDef(setting);
+        ThingDef milkDef = SelectedMilkDef(setting, xenotype);
         return milkDef != null
             ? MilkLabel(milkDef)
             : "FE_MissingSelectedMilk".Translate(setting.producedMilkDefName.Named("DEFNAME"));
+    }
+
+    // The first gene in the xenotype's own list that sets a milk item. Its milk becomes the
+    // xenotype's default, used by members who no longer carry the gene. A pawn's own active
+    // milk gene always beats the xenotype setting.
+    public static GeneDef MilkGeneFor(XenotypeDef xenotype)
+    {
+        if (xenotype?.genes == null)
+        {
+            return null;
+        }
+
+        if (milkGenesByXenotype.TryGetValue(xenotype, out GeneDef cached))
+        {
+            return cached;
+        }
+
+        GeneDef milkGene = null;
+        List<GeneDef> genes = xenotype.genes;
+        for (int i = 0; i < genes.Count; i++)
+        {
+            if (genes[i]?.GetModExtension<LactationGeneExtension>()?.milkDef != null)
+            {
+                milkGene = genes[i];
+                break;
+            }
+        }
+
+        milkGenesByXenotype[xenotype] = milkGene;
+        return milkGene;
+    }
+
+    public static ThingDef DefaultMilkFor(XenotypeDef xenotype)
+    {
+        return MilkGeneFor(xenotype)?.GetModExtension<LactationGeneExtension>().milkDef
+            ?? DominantMilkDef;
+    }
+
+    public static string DefaultMilkLabel(XenotypeDef xenotype)
+    {
+        GeneDef gene = MilkGeneFor(xenotype);
+        return gene == null
+            ? "FE_DefaultMilk".Translate(MilkLabel(DominantMilkDef).Named("MILK"))
+            : "FE_DefaultMilkFromGene".Translate(
+                MilkLabel(DefaultMilkFor(xenotype)).Named("MILK"),
+                gene.LabelCap.Named("GENE"));
     }
 
     private static void BuildXenotypeList()
@@ -190,6 +247,18 @@ internal static class XenotypeProfiles
             }
         }
 
+        IReadOnlyList<GeneDef> lactationGenes = LactationGenes.GenesWithExtension;
+        for (int i = 0; i < lactationGenes.Count; i++)
+        {
+            ThingDef geneMilk = lactationGenes[i].GetModExtension<LactationGeneExtension>().milkDef;
+            if (geneMilk != null
+                && !milkTypeDefNames.Contains(geneMilk.defName)
+                && animalMilkDefNames.Add(geneMilk.defName))
+            {
+                animalMilkTypes.Add(geneMilk);
+            }
+        }
+
         animalMilkTypes.Sort(CompareDefsByLabel);
         for (int i = 0; i < animalMilkTypes.Count; i++)
         {
@@ -232,7 +301,7 @@ internal static class XenotypeProfiles
             : null;
     }
 
-    private static ThingDef ResolveProducedMilkDef(XenotypeSettings setting)
+    private static ThingDef ResolveProducedMilkDef(XenotypeSettings setting, XenotypeDef xenotype)
     {
         if (setting != null
             && !setting.producedMilkDefName.NullOrEmpty()
@@ -245,7 +314,7 @@ internal static class XenotypeProfiles
             }
         }
 
-        return ExternalMilkCompat.DominantMilkDef ?? FE_DefOf.FE_HumanMilk;
+        return DefaultMilkFor(xenotype);
     }
 
     private static XenotypeDef DefaultXenotype()

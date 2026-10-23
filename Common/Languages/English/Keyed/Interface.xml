@@ -27,6 +27,18 @@
   <FE_SettingsLactation>Lactation</FE_SettingsLactation>
   <FE_SettingsLactationSystem>Enable lactation system</FE_SettingsLactationSystem>
   <FE_SettingsLactationSystemTip>Enable FE milk production, automatic self-milking, and lactation induced by implants or the Wet Nurse role. Turning this off does not remove existing lactation or disable infant feeding and other Wet Nurse role effects.</FE_SettingsLactationSystemTip>
+  <FE_SettingsBreastScaling>RJW Breast Size Hediff Lactation Scaling</FE_SettingsBreastScaling>
+  <FE_SettingsBreastScalingEnabled>Scale lactation by breast size</FE_SettingsBreastScalingEnabled>
+  <FE_SettingsBreastScalingEnabledTip>When enabled, milk storage and production are multiplied by RimJobWorld breast size, with a multiplier for each size. When disabled, breast size has no effect on milk.</FE_SettingsBreastScalingEnabledTip>
+  <FE_SettingsBreastScalingInfo>Multiplies milk storage and production for each RimJobWorld breast size. With Lactation Expansion, this scales its lactation capacity and lactation per day.</FE_SettingsBreastScalingInfo>
+  <FE_SettingsBreastScalingTierTip>Milk storage and production multiplier for {TIER} breasts.</FE_SettingsBreastScalingTierTip>
+  <FE_SettingsBreastScalingReset>Reset to defaults</FE_SettingsBreastScalingReset>
+  <FE_SettingsMaleLactationGene>Male lactation from the wet nurse gene</FE_SettingsMaleLactationGene>
+  <FE_SettingsMaleLactationGeneTip>Let male carriers of the wet nurse gene lactate. Not available while Lactation Expansion is active, since it replaces the gene with its own.</FE_SettingsMaleLactationGeneTip>
+  <FE_SettingsMaleLactationRole>Male lactation from the Wet Nurse role</FE_SettingsMaleLactationRole>
+  <FE_SettingsMaleLactationRoleTip>Let male pawns holding the Wet Nurse role lactate. When off, the role keeps its other effects for men.</FE_SettingsMaleLactationRoleTip>
+  <FE_SettingsMaleLactationImplant>Male lactation from the lactation implant</FE_SettingsMaleLactationImplant>
+  <FE_SettingsMaleLactationImplantTip>Let male pawns with a lactation implant lactate.</FE_SettingsMaleLactationImplantTip>
   <FE_SettingsAdvancedLactation>Advanced lactation settings</FE_SettingsAdvancedLactation>
   <FE_SettingsAdvancedLactationTip>Adjust milk storage, production speed, and milk type for each xenotype using FE milk production. Other milk mods keep their own settings.</FE_SettingsAdvancedLactationTip>
   <FE_SettingsXenotype>Xenotype</FE_SettingsXenotype>
@@ -36,7 +48,7 @@
   <FE_SettingsProductionRate>Production rate</FE_SettingsProductionRate>
   <FE_SettingsProductionRateTip>Adjust how quickly the shared milk supply replenishes, compared with vanilla nursing production.</FE_SettingsProductionRateTip>
   <FE_SettingsProducedMilk>Produced milk</FE_SettingsProducedMilk>
-  <FE_SettingsProducedMilkTip>Choose the item produced by FE self-milking for this xenotype. This does not change breastfeeding ideology recognition.</FE_SettingsProducedMilkTip>
+  <FE_SettingsProducedMilkTip>Choose the item produced by FE self-milking for this xenotype. If the xenotype's genes set a milk, that is the default. A pawn who carries an active milk gene always produces that gene's milk, whatever is chosen here, so this choice only reaches members of the xenotype without one. This does not change breastfeeding ideology recognition.</FE_SettingsProducedMilkTip>
   <FE_SettingsFamily>Family Systems</FE_SettingsFamily>
   <FE_SettingsDisableAdoption>Disable adoption requests</FE_SettingsDisableAdoption>
   <FE_SettingsDisableAdoptionTip>Stop new FE emergency adoption requests. Existing requests and family records are kept.</FE_SettingsDisableAdoptionTip>
@@ -103,6 +115,7 @@
   <FE_NoXenotypes>No xenotypes available</FE_NoXenotypes>
   <FE_MilkDefinitionMissing>Missing milk definition</FE_MilkDefinitionMissing>
   <FE_MilkWithSource>{MILK} ({SOURCE})</FE_MilkWithSource>
+  <FE_DefaultMilkFromGene>Default - {MILK} (from {GENE} gene)</FE_DefaultMilkFromGene>
   <FE_MissingSelectedMilk>Missing: {DEFNAME} - using default</FE_MissingSelectedMilk>
   <FE_TubalLigationLabel>tie fallopian tubes</FE_TubalLigationLabel>
   <FE_TubalLigationJob>tying TargetA's fallopian tubes.</FE_TubalLigationJob>

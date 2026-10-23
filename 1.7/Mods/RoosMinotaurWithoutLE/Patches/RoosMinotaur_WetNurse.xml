@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Lactation Expansion makes the same swap to its own SEX_AlwaysLactating, so this
+       folder is not loaded alongside it. RBM_PeriodicLactation itself stays defined for
+       existing pawns; Mods/RoosMinotaur already strips its lactation ability. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/XenotypeDef[defName="RBM_Minotaur"]/genes/li[text()="RBM_PeriodicLactation"]</xpath>
+    <value>
+      <li>FE_AlwaysLactating</li>
+    </value>
+  </Operation>
+
+</Patch>

@@ -9,14 +9,17 @@ public class WetNurseSource : HediffComp
 {
     public override void CompPostPostAdd(DamageInfo? dinfo)
     {
-        WetNurseLactation.MaintainLactation(Pawn);
+        if (ModsConfig.IdeologyActive)
+        {
+            WetNurseLactation.MaintainLactation(Pawn, Features.MaleLactationFromRole);
+        }
     }
 
     public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
-        if (Pawn.IsHashIntervalTick(2500, delta))
+        if (ModsConfig.IdeologyActive && Pawn.IsHashIntervalTick(2500, delta))
         {
-            WetNurseLactation.MaintainLactation(Pawn);
+            WetNurseLactation.MaintainLactation(Pawn, Features.MaleLactationFromRole);
         }
     }
 }

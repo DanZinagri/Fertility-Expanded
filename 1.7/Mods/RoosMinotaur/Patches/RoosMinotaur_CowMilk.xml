@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/XenotypeDef[defName="RBM_Minotaur"]/genes</xpath>
+    <value>
+      <li>FE_CowMilk</li>
+    </value>
+  </Operation>
+
+</Patch>
